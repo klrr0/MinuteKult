@@ -1,5 +1,6 @@
 let questions = [];
 let questionIndex = 0;
+let score = 0; // IMPORTANT : tu l'avais perdu
 
 // Charger les questions
 fetch("./data/questions.json")
@@ -24,59 +25,67 @@ function afficherQuestion(index) {
         const btn = document.createElement("button");
         btn.textContent = rep;
 
-       btn.onclick = () => {
-    const isCorrect = (i === q.answer);
+        btn.onclick = () => {
+            const isCorrect = (i === q.answer);
 
-    // Verso : bonne réponse
-    document.getElementById("correct-answer").textContent =
-        "Bonne réponse : " + q.choices[q.answer];
+            // Score
+            if (isCorrect) score++;
 
-    // Feedback sur le bouton cliqué
-    if (isCorrect) {
-        btn.classList.add("correct");
-        document.querySelector(".back").classList.add("correct");
-    } else {
-        btn.classList.add("wrong");
-        document.querySelector(".back").classList.add("wrong");
-    }
+            // Verso : bonne réponse
+            document.getElementById("correct-answer").textContent =
+                "Bonne réponse : " + q.choices[q.answer];
 
-    // Flip
-    document.getElementById("card").classList.add("flip");
+            // Feedback visuel
+            if (isCorrect) {
+                btn.classList.add("correct");
+                document.querySelector(".back").classList.add("correct");
+            } else {
+                btn.classList.add("wrong");
+                document.querySelector(".back").classList.add("wrong");
+            }
 
-    // Attendre 2 sec → revenir au recto → question suivante
-    setTimeout(() => {
-        document.getElementById("card").classList.remove("flip");
+            // Désactiver tous les boutons pour éviter les clics infinis
+            document.querySelectorAll("#answers button").forEach(b => {
+                b.disabled = true;
+            });
 
-        // Nettoyer les classes pour la prochaine question
-        document.querySelector(".back").classList.remove("correct", "wrong");
+            // Flip
+            document.getElementById("card").classList.add("flip");
 
-        questionIndex++;
+            // Attendre 2 sec → revenir au recto → question suivante
+            setTimeout(() => {
+                document.getElementById("card").classList.remove("flip");
+                document.querySelector(".back").classList.remove("correct", "wrong");
 
-        if (questionIndex < questions.length) {
-            afficherQuestion(questionIndex);
-        } else {
-            afficherFin();
-        }
-    }, 2000);
-};
+                questionIndex++;
+
+                // FIN DU QUIZ
+                if (questionIndex >= questions.length) {
+                    afficherFin();
+                    return; // IMPORTANT : empêche tout autre affichage
+                }
+
+                // Question suivante
+                afficherQuestion(questionIndex);
+
+            }, 2000);
+        };
 
         answersDiv.appendChild(btn);
     });
 }
 
+// Carte finale stylée
 function afficherFin() {
-    // Calcul du pourcentage
     const total = questions.length;
     const percent = Math.round((score / total) * 100);
 
-    // Choix de l'emoji chien selon le score
     let emoji = "🐶";
     if (percent >= 80) emoji = "🐶🎉";
     else if (percent >= 50) emoji = "🐕🙂";
     else if (percent >= 30) emoji = "🐾😐";
     else emoji = "😢🐶";
 
-    // Affichage de la carte finale
     document.getElementById("question").innerHTML = `
         <div class="final-card">
             <h2>Fin du quiz Géographie 🌍</h2>
@@ -86,11 +95,9 @@ function afficherFin() {
         </div>
     `;
 
-    // On vide les réponses et le verso
     document.getElementById("answers").innerHTML = "";
     document.getElementById("correct-answer").textContent = "";
 
-    // Bouton rejouer
     document.getElementById("restart-btn").onclick = () => {
         score = 0;
         questionIndex = 0;
