@@ -1,26 +1,81 @@
+/* --- PAGE --- */
 body {
-  font-family: Arial, sans-serif;
-  background: #f5f5f5;
-  padding: 20px;
+    background: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    font-family: "Inter", sans-serif;
 }
 
-#app {
-  max-width: 500px;
-  margin: auto;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
+/* --- CONTAINER --- */
+.flashcard-container {
+    perspective: 1200px;
 }
 
-button {
-  display: block;
-  width: 100%;
-  margin: 8px 0;
-  padding: 10px;
-  border-radius: 6px;
-  border: none;
-  background: #ff8c00;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
+/* --- FLASHCARD --- */
+.flashcard {
+    width: 500px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+}
+
+/* --- RECTO & VERSO --- */
+.flashcard .front,
+.flashcard .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+/* --- BACK SIDE --- */
+.flashcard .back {
+    transform: rotateY(180deg);
+    background: #c8f7c5;
+}
+
+/* --- FLIP CLASS --- */
+.flashcard.flip {
+    transform: rotateY(180deg);
+}
+
+/* --- QUESTION --- */
+.question {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+/* --- ANSWERS --- */
+.answers {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.answers button {
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    background: #eaeaea;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.answers button:hover {
+    background: #dcdcdc;
+    transform: scale(1.02);
 }
