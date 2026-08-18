@@ -24,27 +24,41 @@ function afficherQuestion(index) {
         const btn = document.createElement("button");
         btn.textContent = rep;
 
-        btn.onclick = () => {
-            // Verso : bonne réponse
-            document.getElementById("correct-answer").textContent =
-                "Bonne réponse : " + q.choices[q.answer];
+       btn.onclick = () => {
+    const isCorrect = (i === q.answer);
 
-            // Flip
-            document.getElementById("card").classList.add("flip");
+    // Verso : bonne réponse
+    document.getElementById("correct-answer").textContent =
+        "Bonne réponse : " + q.choices[q.answer];
 
-            // Attendre 2 sec → revenir au recto → question suivante
-            setTimeout(() => {
-                document.getElementById("card").classList.remove("flip");
+    // Feedback sur le bouton cliqué
+    if (isCorrect) {
+        btn.classList.add("correct");
+        document.querySelector(".back").classList.add("correct");
+    } else {
+        btn.classList.add("wrong");
+        document.querySelector(".back").classList.add("wrong");
+    }
 
-                questionIndex++;
+    // Flip
+    document.getElementById("card").classList.add("flip");
 
-                if (questionIndex < questions.length) {
-                    afficherQuestion(questionIndex);
-                } else {
-                    afficherFin();
-                }
-            }, 2000);
-        };
+    // Attendre 2 sec → revenir au recto → question suivante
+    setTimeout(() => {
+        document.getElementById("card").classList.remove("flip");
+
+        // Nettoyer les classes pour la prochaine question
+        document.querySelector(".back").classList.remove("correct", "wrong");
+
+        questionIndex++;
+
+        if (questionIndex < questions.length) {
+            afficherQuestion(questionIndex);
+        } else {
+            afficherFin();
+        }
+    }, 2000);
+};
 
         answersDiv.appendChild(btn);
     });

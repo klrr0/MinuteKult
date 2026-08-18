@@ -79,3 +79,48 @@ body {
     background: #dcdcdc;
     transform: scale(1.02);
 }
+
+/* --- FEEDBACK --- */
+.answers button.correct {
+    background: #c8f7c5 !important;
+}
+
+.answers button.wrong {
+    background: #f7c5c5 !important;
+}
+
+.back.correct {
+    background: #c8f7c5 !important;
+}
+
+.back.wrong {
+    background: #f7c5c5 !important;
+}
+/* --- MOBILE --- */
+@media (max-width: 600px) {
+    .flashcard {
+        width: 90%;
+        height: auto;
+        min-height: 250px;
+    }
+
+    .flashcard .front,
+    .flashcard .back {
+        padding: 20px;
+    }
+
+    .question {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+
+    .answers button {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+
+    body {
+        padding: 10px;
+    }
+}
+
