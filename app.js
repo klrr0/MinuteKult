@@ -64,9 +64,36 @@ function afficherQuestion(index) {
     });
 }
 
-// Fin du quiz
 function afficherFin() {
-    document.getElementById("question").textContent = "Fin du quiz !";
+    // Calcul du pourcentage
+    const total = questions.length;
+    const percent = Math.round((score / total) * 100);
+
+    // Choix de l'emoji chien selon le score
+    let emoji = "🐶";
+    if (percent >= 80) emoji = "🐶🎉";
+    else if (percent >= 50) emoji = "🐕🙂";
+    else if (percent >= 30) emoji = "🐾😐";
+    else emoji = "😢🐶";
+
+    // Affichage de la carte finale
+    document.getElementById("question").innerHTML = `
+        <div class="final-card">
+            <h2>Fin du quiz Géographie 🌍</h2>
+            <div class="emoji">${emoji}</div>
+            <p>Score : ${score} / ${total} (${percent}%)</p>
+            <button id="restart-btn">Rejouer</button>
+        </div>
+    `;
+
+    // On vide les réponses et le verso
     document.getElementById("answers").innerHTML = "";
-    document.getElementById("correct-answer").textContent = "Bravo !";
+    document.getElementById("correct-answer").textContent = "";
+
+    // Bouton rejouer
+    document.getElementById("restart-btn").onclick = () => {
+        score = 0;
+        questionIndex = 0;
+        afficherQuestion(questionIndex);
+    };
 }
