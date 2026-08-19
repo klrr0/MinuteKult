@@ -43,7 +43,7 @@ body {
 /* --- BACK SIDE --- */
 .flashcard .back {
     transform: rotateY(180deg);
-    background: #c8f7c5;
+    background: white; /* neutre */
 }
 
 /* --- FLIP CLASS --- */
@@ -96,6 +96,24 @@ body {
 .back.wrong {
     background: #f7c5c5 !important;
 }
+
+/* --- FEEDBACK --- */
+.answers button.correct {
+    background: #c8f7c5 !important;
+}
+
+.answers button.wrong {
+    background: #f7c5c5 !important;
+}
+
+.back.correct {
+    background: #c8f7c5 !important;
+}
+
+.back.wrong {
+    background: #f7c5c5 !important;
+}
+
 /* --- MOBILE --- */
 @media (max-width: 600px) {
     .flashcard {
