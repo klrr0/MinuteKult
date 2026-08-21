@@ -1,3 +1,36 @@
+// Écrans
+const splash = document.getElementById("splash-screen");
+const home = document.getElementById("home-screen");
+const card = document.getElementById("card");
+
+// Masquer la carte au début
+card.style.display = "none";
+
+// Splash → Home
+setTimeout(() => {
+    splash.classList.add("hidden");
+    home.classList.remove("hidden");
+}, 2500);
+document.querySelectorAll(".theme-btn").forEach(btn => {
+    btn.onclick = () => {
+        const theme = btn.dataset.theme;
+
+        // Charger les questions du thème
+        fetch(`./data/${theme}.json`)
+            .then(res => res.json())
+            .then(data => {
+                questions = data;
+                questionIndex = 0;
+                score = 0;
+
+                home.classList.add("hidden");
+                card.style.display = "block";
+
+                afficherQuestion(questionIndex);
+            });
+    };
+});
+
 let questions = [];
 let questionIndex = 0;
 let score = 0; // IMPORTANT : tu l'avais perdu
