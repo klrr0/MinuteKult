@@ -15,7 +15,7 @@
   },
   {
    "question":"Quel était le nom de la première fusée-sonde française ?",
-   "choices": ["Europa, Centaure, Véronique, Bélier"],
+   "choices": ["Europa", "Centaure", "Véronique", "Bélier"],
    "answer": 2,
    "category": "Sciences",
    "difficulty": "easy"
