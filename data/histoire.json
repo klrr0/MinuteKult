@@ -22,7 +22,7 @@
   },
   {
    "question": "En quelle année a débuté la première guerre du Golfe ?",
-   "choices": ["1987", "1990", "1992", "1994"]
+   "choices": ["1987", "1990", "1992", "1994"],
    "answer": 1,
    "category": "Histoire",
    "difficulty": "moyenne"
