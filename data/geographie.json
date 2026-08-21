@@ -1,0 +1,9 @@
+[
+  {
+    "question": "Quel est le plus grand océan du monde ?",
+    "choices": ["Atlantique", "Pacifique", "Arctique", "Indien"],
+    "answer": 1,
+    "category": "Géographie",
+    "difficulty": "facile"
+  }
+]

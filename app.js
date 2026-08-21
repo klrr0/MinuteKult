@@ -1,3 +1,8 @@
+// Variables globales
+let questions = [];
+let questionIndex = 0;
+let score = 0;
+
 // Écrans
 const splash = document.getElementById("splash-screen");
 const home = document.getElementById("home-screen");
@@ -11,42 +16,22 @@ setTimeout(() => {
     splash.classList.add("hidden");
     home.classList.remove("hidden");
 }, 2500);
+
+
+// -----------------------------
+// CHOIX DU THÈME + TRI DIFFICULTÉ
+// -----------------------------
 document.querySelectorAll(".theme-btn").forEach(btn => {
     btn.onclick = () => {
         const theme = btn.dataset.theme;
 
-        // Charger les questions du thème
-        fetch(`./data/${theme}.json`)
-            .then(res => res.json())
-            .then(data => {
-                questions = data;
-                questionIndex = 0;
-                score = 0;
-
-                home.classList.add("hidden");
-                card.style.display = "block";
-
-                afficherQuestion(questionIndex);
-            });
-    };
-});
-
-// Choix du thème + chargement + tri par difficulté
-document.querySelectorAll(".theme-btn").forEach(btn => {
-    btn.onclick = () => {
-        const theme = btn.dataset.theme;
-
-        // Charger le fichier du thème
         fetch(`./data/${theme}.json`)
             .then(res => res.json())
             .then(data => {
 
-                // TRIER PAR DIFFICULTÉ
+                // Tri par difficulté
                 const order = { easy: 1, medium: 2, hard: 3 };
-
-                questions = data.sort((a, b) => {
-                    return order[a.difficulty] - order[b.difficulty];
-                });
+                questions = data.sort((a, b) => order[a.difficulty] - order[b.difficulty]);
 
                 // Reset
                 questionIndex = 0;
@@ -57,30 +42,20 @@ document.querySelectorAll(".theme-btn").forEach(btn => {
                 card.style.display = "block";
 
                 afficherQuestion(questionIndex);
-            });
+            })
+            .catch(err => console.error("Erreur JSON :", err));
     };
 });
 
-let questions = [];
-let questionIndex = 0;
-let score = 0; // IMPORTANT : tu l'avais perdu
 
-// Charger les questions
-fetch("./data/questions.json")
-    .then(res => res.json())
-    .then(data => {
-        questions = data;
-        afficherQuestion(questionIndex);
-    });
-
-// Afficher une question
+// -----------------------------
+// AFFICHER UNE QUESTION
+// -----------------------------
 function afficherQuestion(index) {
     const q = questions[index];
 
-    // Recto : question
     document.getElementById("question").textContent = q.question;
 
-    // Recto : réponses
     const answersDiv = document.getElementById("answers");
     answersDiv.innerHTML = "";
 
@@ -91,14 +66,11 @@ function afficherQuestion(index) {
         btn.onclick = () => {
             const isCorrect = (i === q.answer);
 
-            // Score
             if (isCorrect) score++;
 
-            // Verso : bonne réponse
             document.getElementById("correct-answer").textContent =
                 "Bonne réponse : " + q.choices[q.answer];
 
-            // Feedback visuel
             if (isCorrect) {
                 btn.classList.add("correct");
                 document.querySelector(".back").classList.add("correct");
@@ -107,28 +79,21 @@ function afficherQuestion(index) {
                 document.querySelector(".back").classList.add("wrong");
             }
 
-            // Désactiver tous les boutons pour éviter les clics infinis
-            document.querySelectorAll("#answers button").forEach(b => {
-                b.disabled = true;
-            });
+            document.querySelectorAll("#answers button").forEach(b => b.disabled = true);
 
-            // Flip
             document.getElementById("card").classList.add("flip");
 
-            // Attendre 2 sec → revenir au recto → question suivante
             setTimeout(() => {
                 document.getElementById("card").classList.remove("flip");
                 document.querySelector(".back").classList.remove("correct", "wrong");
 
                 questionIndex++;
 
-                // FIN DU QUIZ
                 if (questionIndex >= questions.length) {
                     afficherFin();
-                    return; // IMPORTANT : empêche tout autre affichage
+                    return;
                 }
 
-                // Question suivante
                 afficherQuestion(questionIndex);
 
             }, 2000);
@@ -138,7 +103,10 @@ function afficherQuestion(index) {
     });
 }
 
-// Carte finale stylée
+
+// -----------------------------
+// FIN DU QUIZ
+// -----------------------------
 function afficherFin() {
     const total = questions.length;
     const percent = Math.round((score / total) * 100);
@@ -151,7 +119,7 @@ function afficherFin() {
 
     document.getElementById("question").innerHTML = `
         <div class="final-card">
-            <h2>Fin du quiz Géographie 🌍</h2>
+            <h2>Fin du quiz 🌍</h2>
             <div class="emoji">${emoji}</div>
             <p>Score : ${score} / ${total} (${percent}%)</p>
             <button id="restart-btn">Rejouer</button>
