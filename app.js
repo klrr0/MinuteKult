@@ -29,15 +29,18 @@ document.querySelectorAll(".theme-btn").forEach(btn => {
             .then(res => res.json())
             .then(data => {
 
-                // Tri par difficulté
-                const order = { easy: 1, medium: 2, hard: 3 };
+                // Tri par difficulté (FR)
+                const order = { 
+                    facile: 1, 
+                    moyenne: 2, 
+                    difficile: 3 
+                };
+
                 questions = data.sort((a, b) => order[a.difficulty] - order[b.difficulty]);
 
-                // Reset
                 questionIndex = 0;
                 score = 0;
 
-                // Afficher la carte
                 home.classList.add("hidden");
                 card.style.display = "block";
 
@@ -81,10 +84,10 @@ function afficherQuestion(index) {
 
             document.querySelectorAll("#answers button").forEach(b => b.disabled = true);
 
-            document.getElementById("card").classList.add("flip");
+            card.classList.add("flip");
 
             setTimeout(() => {
-                document.getElementById("card").classList.remove("flip");
+                card.classList.remove("flip");
                 document.querySelector(".back").classList.remove("correct", "wrong");
 
                 questionIndex++;
@@ -111,6 +114,7 @@ function afficherFin() {
     const total = questions.length;
     const percent = Math.round((score / total) * 100);
 
+    let emoji = "🐶";
     if (percent >= 80) emoji = "🎉";
     else if (percent >= 50) emoji = "🙂";
     else if (percent >= 30) emoji = "😐";
@@ -118,19 +122,32 @@ function afficherFin() {
 
     document.getElementById("question").innerHTML = `
         <div class="final-card">
-            <h2>Fin du quiz !</h2>
+            <h2>Fin du quiz 🌍</h2>
             <div class="emoji">${emoji}</div>
             <p>Score : ${score} / ${total} (${percent}%)</p>
-            <button id="restart-btn">Rejouer</button>
+
+            <div class="final-buttons">
+                <button id="restart-btn">Rejouer</button>
+                <button id="home-btn">Retour à l'accueil</button>
+            </div>
         </div>
     `;
 
     document.getElementById("answers").innerHTML = "";
     document.getElementById("correct-answer").textContent = "";
 
+    // Rejouer
     document.getElementById("restart-btn").onclick = () => {
         score = 0;
         questionIndex = 0;
         afficherQuestion(questionIndex);
+    };
+
+    // Retour à l'accueil
+    document.getElementById("home-btn").onclick = () => {
+        card.style.display = "none";
+        home.classList.remove("hidden");
+        score = 0;
+        questionIndex = 0;
     };
 }

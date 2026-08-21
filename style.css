@@ -1,188 +1,12 @@
-/* --- PAGE --- */
 body {
+    font-family: Arial, sans-serif;
     background: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-    font-family: "Inter", sans-serif;
-}
-
-/* --- CONTAINER --- */
-.flashcard-container {
-    perspective: 1200px;
-}
-
-/* --- FLASHCARD --- */
-.flashcard {
-    width: 500px;
-    height: 300px;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.6s ease;
-}
-
-/* --- RECTO & VERSO --- */
-.flashcard .front,
-.flashcard .back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    margin: 0;
+    padding: 0;
     text-align: center;
 }
 
-/* --- BACK SIDE --- */
-.flashcard .back {
-    transform: rotateY(180deg);
-    background: white; /* neutre */
-}
-
-/* --- FLIP CLASS --- */
-.flashcard.flip {
-    transform: rotateY(180deg);
-}
-
-/* --- QUESTION --- */
-.question {
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin-bottom: 25px;
-}
-
-/* --- ANSWERS --- */
-.answers {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.answers button {
-    padding: 14px;
-    border-radius: 10px;
-    border: none;
-    background: #eaeaea;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.2s ease, transform 0.1s ease;
-}
-
-.answers button:hover {
-    background: #dcdcdc;
-    transform: scale(1.02);
-}
-
-/* --- FEEDBACK --- */
-.answers button.correct {
-    background: #c8f7c5 !important;
-}
-
-.answers button.wrong {
-    background: #f7c5c5 !important;
-}
-
-.back.correct {
-    background: #c8f7c5 !important;
-}
-
-.back.wrong {
-    background: #f7c5c5 !important;
-}
-
-/* --- FEEDBACK --- */
-.answers button.correct {
-    background: #c8f7c5 !important;
-}
-
-.answers button.wrong {
-    background: #f7c5c5 !important;
-}
-
-.back.correct {
-    background: #c8f7c5 !important;
-}
-
-.back.wrong {
-    background: #f7c5c5 !important;
-}
-
-/* --- MOBILE --- */
-@media (max-width: 600px) {
-    .flashcard {
-        width: 90%;
-        height: auto;
-        min-height: 250px;
-    }
-
-    .flashcard .front,
-    .flashcard .back {
-        padding: 20px;
-    }
-
-    .question {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
-    }
-
-    .answers button {
-        padding: 12px;
-        font-size: 0.95rem;
-    }
-
-    body {
-        padding: 10px;
-    }
-}/* --- CARTE FINALE --- */
-.final-card {
-    background: linear-gradient(135deg, #d0e6ff, #f2f7ff);
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    padding: 30px;
-    text-align: center;
-    width: 100%;
-    max-width: 500px;
-    margin-top: 20px;
-}
-
-.final-card h2 {
-    font-size: 1.6rem;
-    margin-bottom: 15px;
-}
-
-.final-card .emoji {
-    font-size: 3rem;
-    margin: 10px 0;
-}
-
-.final-card p {
-    font-size: 1.2rem;
-    font-weight: 600;
-}
-
-.final-card button {
-    margin-top: 20px;
-    padding: 12px 20px;
-    border-radius: 10px;
-    border: none;
-    background: #eaeaea;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.2s ease;
-}
-
-.final-card button:hover {
-    background: #dcdcdc;
-}
-
-/* --- SPLASH SCREEN --- */
+/* Splash screen */
 #splash-screen {
     position: fixed;
     top: 0; left: 0;
@@ -206,10 +30,9 @@ body {
     to { opacity: 0; visibility: hidden; }
 }
 
-/* --- HOME SCREEN --- */
+/* Home screen */
 #home-screen {
-    text-align: center;
-    margin-top: 50px;
+    margin-top: 60px;
 }
 
 .theme-btn {
@@ -224,6 +47,105 @@ body {
 }
 
 .theme-btn:hover {
+    background: #dcdcdc;
+}
+
+/* Flashcard */
+.flashcard-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.flashcard {
+    width: 350px;
+    height: 250px;
+    perspective: 1000px;
+}
+
+.flashcard .front,
+.flashcard .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    padding: 20px;
+    box-sizing: border-box;
+    background: white;
+    transition: background 0.2s ease;
+}
+
+.flashcard .back {
+    transform: rotateY(180deg);
+}
+
+/* Flip animation */
+.flashcard.flip .front {
+    transform: rotateY(180deg);
+}
+
+.flashcard.flip .back {
+    transform: rotateY(360deg);
+}
+
+/* Answers */
+.answers button {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: #eaeaea;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.answers button:hover {
+    background: #dcdcdc;
+}
+
+/* Feedback */
+.answers button.correct {
+    background: #c8f7c5 !important;
+}
+
+.answers button.wrong {
+    background: #f7c5c5 !important;
+}
+
+.back.correct {
+    background: #c8f7c5 !important;
+}
+
+.back.wrong {
+    background: #f7c5c5 !important;
+}
+
+/* Final card */
+.final-card {
+    padding: 20px;
+}
+
+.final-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#restart-btn, #home-btn {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #ececec;
+    transition: 0.2s;
+}
+
+#restart-btn:hover, #home-btn:hover {
     background: #dcdcdc;
 }
 
