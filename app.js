@@ -122,7 +122,7 @@ function afficherFin() {
 
     document.getElementById("question").innerHTML = `
         <div class="final-card">
-            <h2>Fin du quiz 🌍</h2>
+            <h2>Fin du quiz !</h2>
             <div class="emoji">${emoji}</div>
             <p>Score : ${score} / ${total} (${percent}%)</p>
 
