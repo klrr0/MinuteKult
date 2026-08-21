@@ -76,6 +76,14 @@ body {
     transition: background 0.2s ease;
 }
 
+/* Front: question + réponses en bas */
+.flashcard .front {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Back: centré */
 .flashcard .back {
     transform: rotateY(180deg);
     display: flex;
@@ -83,6 +91,7 @@ body {
     align-items: center;
     text-align: center;
 }
+
 .correct-answer {
     font-size: 1.4rem;
     font-weight: 600;
@@ -98,6 +107,10 @@ body {
 }
 
 /* Answers */
+.answers {
+    margin-top: 20px;
+}
+
 .answers button {
     display: block;
     width: 100%;
@@ -156,4 +169,3 @@ body {
 #restart-btn:hover, #home-btn:hover {
     background: #dcdcdc;
 }
-
