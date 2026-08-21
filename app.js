@@ -111,15 +111,14 @@ function afficherFin() {
     const total = questions.length;
     const percent = Math.round((score / total) * 100);
 
-    let emoji = "🐶";
-    if (percent >= 80) emoji = "🐶🎉";
-    else if (percent >= 50) emoji = "🐕🙂";
-    else if (percent >= 30) emoji = "🐾😐";
-    else emoji = "😢🐶";
+    if (percent >= 80) emoji = "🎉";
+    else if (percent >= 50) emoji = "🙂";
+    else if (percent >= 30) emoji = "😐";
+    else emoji = "😢";
 
     document.getElementById("question").innerHTML = `
         <div class="final-card">
-            <h2>Fin du quiz 🌍</h2>
+            <h2>Fin du quiz !</h2>
             <div class="emoji">${emoji}</div>
             <p>Score : ${score} / ${total} (${percent}%)</p>
             <button id="restart-btn">Rejouer</button>
