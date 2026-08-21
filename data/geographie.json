@@ -4,6 +4,6 @@
     "choices": ["Atlantique", "Pacifique", "Arctique", "Indien"],
     "answer": 1,
     "category": "Géographie",
-    "difficulty": "facile"
+    "difficulty": "easy"
   }
 ]

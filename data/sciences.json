@@ -1,0 +1,9 @@
+[
+  {
+    "question": "Selon l'échelle de Schmidt, quel insecte est classé parmi les plus douloureux ?",
+    "choices": ["Le taon", "Le frelon asiatique", "Le frelon européen", "La fourmi balle de fusil"],
+    "answer": 3,
+    "category": "Sciences",
+    "difficulty": "easy"
+  }
+]

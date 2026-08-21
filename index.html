@@ -2,27 +2,34 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Quiz Culture Générale</title>
+  <title>MinuteKult 🌍</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- Écran de lancement -->
 <div id="splash-screen" class="hidden">
     <h1>MinuteKult 🌍</h1>
 </div>
 
+<!-- Écran d'accueil -->
 <div id="home-screen" class="hidden">
     <h2>Choisis un thème</h2>
+
+    <!-- Boutons des thèmes -->
     <button class="theme-btn" data-theme="geographie">Géographie</button>
     <button class="theme-btn" data-theme="histoire">Histoire</button>
     <button class="theme-btn" data-theme="cinema">Cinéma</button>
+    <button class="theme-btn" data-theme="sport">Sport</button>
+    <button class="theme-btn" data-theme="sciences">Sciences</button>
+    -->
 </div>
 
+<!-- Carte du quiz -->
 <div class="flashcard-container">
     <div class="flashcard" id="card">
         <div class="front">
             <div class="question" id="question"></div>
-
             <div class="answers" id="answers"></div>
         </div>
 
@@ -32,6 +39,6 @@
     </div>
 </div>
 
-  <script src="app.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
