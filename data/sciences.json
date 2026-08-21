@@ -5,5 +5,18 @@
     "answer": 3,
     "category": "Sciences",
     "difficulty": "easy"
+  },
+  {
+   "question": "Quel nom désigne l'élevage d'abeilles ?",
+   "choices": ["Pisciculture", "Apiculture", "Aviculture", "Cuniculture"],
+   "answer": 1,
+   "category": "Sciences",
+   "difficulty": "easy"
+  },
+  {
+   "question":"Quel était le nom de la première fusée-sonde française ?"
+   "choices": ["Europa, Centaure, Véronique, Bélier"],
+   "answer": "Sciences",
+   "difficulty": "easy"
   }
 ]

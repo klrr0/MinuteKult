@@ -1,0 +1,9 @@
+[
+  {
+    "question": "Quel sport nautique consiste à glisser sur une planche tractée par une aile ressemblant à un cerf-volant ?",
+    "choices": ["Le surf", "Planche à voile", "Kitesurf", "Wakeboard"],
+    "answer": 2,
+    "category": "Sport",
+    "difficulty": "easy"
+  }
+]
