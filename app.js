@@ -31,6 +31,36 @@ document.querySelectorAll(".theme-btn").forEach(btn => {
     };
 });
 
+// Choix du thème + chargement + tri par difficulté
+document.querySelectorAll(".theme-btn").forEach(btn => {
+    btn.onclick = () => {
+        const theme = btn.dataset.theme;
+
+        // Charger le fichier du thème
+        fetch(`./data/${theme}.json`)
+            .then(res => res.json())
+            .then(data => {
+
+                // TRIER PAR DIFFICULTÉ
+                const order = { easy: 1, medium: 2, hard: 3 };
+
+                questions = data.sort((a, b) => {
+                    return order[a.difficulty] - order[b.difficulty];
+                });
+
+                // Reset
+                questionIndex = 0;
+                score = 0;
+
+                // Afficher la carte
+                home.classList.add("hidden");
+                card.style.display = "block";
+
+                afficherQuestion(questionIndex);
+            });
+    };
+});
+
 let questions = [];
 let questionIndex = 0;
 let score = 0; // IMPORTANT : tu l'avais perdu
