@@ -26,5 +26,12 @@
    "answer": 1,
    "category": "Histoire",
    "difficulty": "medium"
+  },
+  {
+   "question": "En quelle année s'est terminée la première guerre d'Indochine ?",
+   "choices": ["1950", "1954", "1957", "1961"],
+   "answer": 1,
+   "category": "Histoire",
+   "difficulty": "medium"
   }
 ]
