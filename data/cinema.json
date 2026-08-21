@@ -1,7 +1,7 @@
 [
   {
     "question": "Quel acteur incarne Jack Sparrow dans Pirates des Caraïbes ?",
-    "choices": ["Jonnhy Depp", "George Clooney", "Orlando Bloom", "Jack Davenport"],
+    "choices": ["Johnny Depp", "George Clooney", "Orlando Bloom", "Jack Davenport"],
     "answer": 0,
     "category": "Cinéma",
     "difficulty": "easy"
