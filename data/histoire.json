@@ -33,5 +33,12 @@
    "answer": 1,
    "category": "Histoire",
    "difficulty": "medium"
+  },
+  {
+   "question": "En quelle année a eu lieu la bataille d'Austerlitz ?",
+   "choices": ["1785", "1795", "1805", "1807"],
+   "answer": 2,
+   "category": "Histoire",
+   "difficulty": "medium"
   }
 ]
