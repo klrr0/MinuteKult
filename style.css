@@ -75,6 +75,15 @@ body {
     background: white;
     transition: background 0.2s ease;
 }
+#question {
+    font-size: 1.8rem;        /* texte plus grand */
+    font-weight: 600;         /* plus lisible */
+    min-height: 140px;        /* occupe plus d’espace */
+    display: flex;
+    justify-content: center;  /* centré horizontalement */
+    align-items: center;      /* centré verticalement */
+    text-align: center;
+}
 
 /* Front: question + réponses en bas */
 .flashcard .front {
