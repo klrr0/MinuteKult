@@ -1,13 +1,13 @@
 [
   {
-    "question": "Quel acteur incarne Jack Sparrow dans <strong>Pirates des Caraïbes</strong> ?",
+    "question": "Quel acteur incarne Jack Sparrow dans Pirates des Caraïbes ?",
     "choices": ["Johnny Depp", "George Clooney", "Orlando Bloom", "Jack Davenport"],
     "answer": 0,
     "category": "Cinéma",
     "difficulty": "easy"
   },
   {
-   "question": "Qui a réalisé le film <strong>Le Parrain</strong> ?",
+   "question": "Qui a réalisé le film Le Parrain ?",
    "choices": ["Steven Spielberg", "Martin Scorsese", "Quentin Tarantino", Francis Ford Coppola"],
    "answer": 3,
    "category": "Cinéma",
