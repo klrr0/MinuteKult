@@ -21,32 +21,32 @@
     "difficulty": "easy"
   },
   {
-   "question": "Comment s'appelle la partie supérieure de la forêt ?"
-   "choices": ["La canopée", "Le sous-bois", "La litière", "La strate arbustive"],
-   "answer": 0,
-   "category": "Sciences",
-   "difficulty": "easy"
+    "question": "Comment s'appelle la partie supérieure de la forêt ?",
+    "choices": ["La canopée", "Le sous-bois", "La litière", "La strate arbustive"],
+    "answer": 0,
+    "category": "Sciences",
+    "difficulty": "easy"
   },
   {
-   "question": "Quel pigment donne leur couleur verte aux plantes ?"
-   "choices": ["La mélanine", "Les carténoïdes", "La chlorophylle", "Les flavonoïdes"],
-   "answer": 2,
-   "category": "Sciences",
-   "difficulty": "easy"
+    "question": "Quel pigment donne leur couleur verte aux plantes ?",
+    "choices": ["La mélanine", "Les carténoïdes", "La chlorophylle", "Les flavonoïdes"],
+    "answer": 2,
+    "category": "Sciences",
+    "difficulty": "easy"
   },
   {
-   "question": "Quel phénomène Stephen Hawking a-t-il étudié ?",
-   "choices": ["Les eclipses", "Les comètes", "Les supernovas", "Les trous noirs"],
-   "answer": 3,
-   "category": "Sciences",
-   "difficulty": "easy"
+    "question": "Quel phénomène Stephen Hawking a-t-il étudié ?",
+    "choices": ["Les eclipses", "Les comètes", "Les supernovas", "Les trous noirs"],
+    "answer": 3,
+    "category": "Sciences",
+    "difficulty": "easy"
   },
   {
-   "question": "Quel organe produit l'insuline ?",
-   "choices": ["Le foie", "Les reins", "Le pancréas", "La thyroïde"],
-   "answer": 2,
-   "category": "Sciences",
-   "difficulty": "easy"
+    "question": "Quel organe produit l'insuline ?",
+    "choices": ["Le foie", "Les reins", "Le pancréas", "La thyroïde"],
+    "answer": 2,
+    "category": "Sciences",
+    "difficulty": "easy"
   },
   {
     "question": "Combien de fois Roy Sullivan a été foudroyé ?",
