@@ -20,4 +20,46 @@
    "category": "Sciences",
    "difficulty": "easy"
   }
+  {
+   "question": "Combien de fois Roy Sullivan a été foudroyé ?",
+   "choices": ["7 fois", "9 fois", "11 fois", "14 fois"],
+   "answer": 0.
+   "category": "Sciences",
+   "difficulty": "medium"
+  },
+  {
+   "question": "Qui est considéré comme l’inventeur du stéthoscope ?",
+   "choices": ["Louis Pasteur", "Albert Camette", "René Laennec", "Alexander Fleming"],
+   "answer": 2,
+   "category": "Sciences",
+   "difficulty": "medium"
+  },
+  {
+   "question": "Quel est l'organe le plus lourd du corps humain ?",
+   "choices": ["Le cerveau", "Le foie", "Les poumons", "La peau"],
+   "answer": 3,
+   "category": "Sciences",
+   "difficulty": "medium"
+  },
+  {
+   "question": "Quelle année marque le début de l'ère spatiale ?",
+   "choices": ["1951", "1957", "1960", "1963"],
+   "answer": 1,
+   "category": "Sciences",
+   "difficulty": "medium"
+  },
+  {
+   "question": "Quel gaz était utilisé pour faire flotter le LZ 129 Hinderburg ?",
+   "choices": ["Méthane", "Néon", "Hélium", "Hydrogène"],
+   "answer": 3,
+   "category": "Sciences",
+   "difficulty": "medium"
+  },
+  {
+   "question": "Combien de muscles compte approximativement le corps humain ?",
+   "choices": ["Environ 200", "Environ 500', "Environ 600", "Environ 900"],
+   "answer": 2,
+   "category": "Sciences",
+   "difficulty": "medium"
+  }
 ]
