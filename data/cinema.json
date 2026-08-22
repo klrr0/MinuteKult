@@ -8,7 +8,7 @@
   },
   {
    "question": "Qui a réalisé le film Le Parrain ?",
-   "choices": ["Steven Spielberg", "Martin Scorsese", "Quentin Tarantino", Francis Ford Coppola"],
+   "choices": ["Steven Spielberg", "Martin Scorsese", "Quentin Tarantino", "Francis Ford Coppola"],
    "answer": 3,
    "category": "Cinéma",
    "difficulty" "easy"

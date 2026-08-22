@@ -15,7 +15,7 @@
    },
    {
     "question": "Dans quelle ville se trouve la tour de Belem ?",
-    "choices": ["Lisbonne", "Madrid", "Le Caire", "Washington"]
+    "choices": ["Lisbonne", "Madrid", "Le Caire", "Washington"],
     "answer": 0,
     "category": "Géographie",
     "difficulty": "easy"
