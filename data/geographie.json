@@ -14,4 +14,86 @@
     "difficulty": "easy"
    },
    {
-    "question": "Dans quelle ville se trouve la 
+    "question": "Dans quelle ville se trouve la tour de Belem ?",
+    "choices": ["Lisbonne", "Madrid", "Le Caire", "Washington"]
+    "answer": 0,
+    "category": "Géographie",
+    "difficulty": "easy"
+  },
+  {
+   "question": "Quelle est la capitale de l'Australie ?",
+   "choices": ["Melbourne", "Canberra", "Sydney", "Brisbane"],
+   "answer": 1,
+   "category": "Géographie",
+   "difficulty": "easy"
+  },
+  {
+   "question": "Quelle est la capitale de la Grèce ?",
+   "choices": ["Athènes", "Sofia", "Tirana", "Skopje"],
+   "answer": 0,
+   "category": "Géographie",
+   "difficulty": "easy"
+  },
+  {
+   "question": "De quel pays le litchi est-il originaire ?",
+   "choices": ["Japon", "Thailande", "Mongolie", "Chine"],
+   "answer": 3,
+   "category": "Géographie",
+   "difficulty": "easy"
+  },
+  {
+   "question": "Où se situe le volcan Etna ?",
+   "choices": ["Russie", "Grèce", "Italie", "Nicaragua"],
+   "answer": 2,
+   "category": "Géographie",
+   "difficulty": "easy"
+  },
+  {
+   "question": "Quel fleuve traverse la ville de Rome ?",
+   "choices": ["Arno", "Tibre", "Adige", "Pô"],
+   "answer": 1,
+   "category": "Géographie",
+   "difficulty": "easy"
+  },
+  {
+   "question": "Dans quel pays se trouve le fleuve Aa ?",
+   "choices": ["Allemagne", "Luxembourg", "France", "Suisse"],
+   "answer": 2,
+   "category": "Géographie",
+   "difficulty": "easy"
+  },
+  {
+   "question": "Quel lieu est surnommé la Ville Éternelle ?",
+   "choices": ["Athènes", "Paris", "Istanbul", "Rome"],
+   "answer": 3,
+   "category": "Géographie",
+   "difficulty": "easy"
+  },
+  {
+   "question": "Quel fleuve traverse la ville de Londres",
+   "choices": ["Tamise", "La Meuse", "Severn", "Glomma"],
+   "answer": 0,
+   "category":"Géographie",
+   "difficulty": "easy"
+  },
+  {
+   "question": "Dans quel pays se trouve le Taj Mahal ?",
+   "choices": ["Népal", "Inde", "Bangladesh", "Pakistan"],
+   "answer": 1,
+   "category": "Géographie",
+   "difficulty": "easy"
+  },
+  {
+   "question": "Dans quel pays se trouvent les pyramides de Gizeh ?",
+   "choices": ["Maroc", "Arabie Saoudite", "Egypte", "Jordanie"],
+   "answer": 2,
+   "category": "Géographie",
+   "difficulty": "easy"
+  },
+  {
+   "question": "Quel est la capitale des îles Samoa",
+   "choices": ["Honiara", "Apia", "Majuro", "Canberra"],
+   "answer": 1,
+   "category": "Géographie",
+   "difficulty": "medium"
+ }

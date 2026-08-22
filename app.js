@@ -114,7 +114,6 @@ function afficherFin() {
     const total = questions.length;
     const percent = Math.round((score / total) * 100);
 
-    let emoji = "🐶";
     if (percent >= 80) emoji = "🎉";
     else if (percent >= 50) emoji = "🙂";
     else if (percent >= 30) emoji = "😐";
