@@ -7,7 +7,7 @@
     "difficulty": "easy"
   },
   {
-    "question": "Quel fleuve traverse la ville de Budapest ?",
+    "question": "Quel fleuve traverse la ville de <strong>Budapest</strong> ?",
     "choices": ["Elbe", "Volga", "Danube", "Tage"],
     "answer": 2,
     "category": "Géographie",

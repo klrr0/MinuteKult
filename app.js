@@ -57,7 +57,7 @@ document.querySelectorAll(".theme-btn").forEach(btn => {
 function afficherQuestion(index) {
     const q = questions[index];
 
-    document.getElementById("question").textContent = q.question;
+    document.getElementById("question").innerHTML = q.question;
 
     const answersDiv = document.getElementById("answers");
     answersDiv.innerHTML = "";
