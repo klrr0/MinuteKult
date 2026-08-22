@@ -91,18 +91,18 @@
     "difficulty": "easy"
   },
   {
-   "question": "Quel pays est surnommé Le pays du Soleil levant ?",
-   "choices": ["Chine", "Corée du Sud", "Thaïlande", "Japon"],
-   "answer": 3,
-   "category": "Géographie",
-   "difficulty": "easy"
+    "question": "Quel pays est surnommé Le pays du Soleil levant ?",
+    "choices": ["Chine", "Corée du Sud", "Thaïlande", "Japon"],
+    "answer": 3,
+    "category": "Géographie",
+    "difficulty": "easy"
   },
   {
-   "question": "Quelle est la capitale du Portugal ?",
-   "choices": ["Porto", "Lisbonne", "Coimbra", "Braga"]
-   "answer": 1,
-   "category": "Géographie",
-   "difficulty": "easy"
+    "question": "Quelle est la capitale du Portugal ?",
+    "choices": ["Porto", "Lisbonne", "Coimbra", "Braga"],
+    "answer": 1,
+    "category": "Géographie",
+    "difficulty": "easy"
   },
   {
     "question": "Quelle est la capitale des îles Samoa ?",

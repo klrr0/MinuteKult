@@ -1,6 +1,6 @@
 [
   {
-   "question": "Quel artiste est à l'origine de l'album Cinquième As ?"
+   "question": "Quel artiste est à l'origine de l'album Cinquième As ?",
    "choices": ["Oxmo Puccino", "Mc Solaar", "Lunatic", "IAM"],
    "answer": 1,
    "category": "Musique",
