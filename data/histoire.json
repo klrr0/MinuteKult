@@ -1,6 +1,6 @@
 [
   {
-    "question": "En quelle année a eu lieu la <strong>Révolution française/strong> ?",
+    "question": "En quelle année a eu lieu la <strong>Révolution française</strong> ?",
     "choices": ["1789", "1815", "1776", "1804"],
     "answer": 0,
     "category": "Histoire",
@@ -21,21 +21,21 @@
    "difficulty": "easy"
   },
   {
-   "question": "En quelle année a débuté la première <strong>guerre du Golfe/strong> ?",
+   "question": "En quelle année a débuté la première <strong>guerre du Golfe</strong> ?",
    "choices": ["1987", "1990", "1992", "1994"],
    "answer": 1,
    "category": "Histoire",
    "difficulty": "medium"
   },
   {
-   "question": "En quelle année s'est terminée la première <strong>guerre d'Indochine/strong> ?",
+   "question": "En quelle année s'est terminée la première <strong>guerre d'Indochine</strong> ?",
    "choices": ["1950", "1954", "1957", "1961"],
    "answer": 1,
    "category": "Histoire",
    "difficulty": "medium"
   },
   {
-   "question": "En quelle année a eu lieu la <strong>bataille d'Austerlitz/strong> ?",
+   "question": "En quelle année a eu lieu la <strong>bataille d'Austerlitz</strong> ?",
    "choices": ["1785", "1795", "1805", "1807"],
    "answer": 2,
    "category": "Histoire",
