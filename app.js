@@ -29,11 +29,11 @@ document.querySelectorAll(".theme-btn").forEach(btn => {
             .then(res => res.json())
             .then(data => {
 
-                // Tri par difficulté (FR)
+                // Correction : difficultés en anglais
                 const order = { 
-                    facile: 1, 
-                    moyenne: 2, 
-                    difficile: 3 
+                    easy: 1, 
+                    medium: 2, 
+                    hard: 3 
                 };
 
                 questions = data.sort((a, b) => order[a.difficulty] - order[b.difficulty]);
@@ -114,6 +114,7 @@ function afficherFin() {
     const total = questions.length;
     const percent = Math.round((score / total) * 100);
 
+    let emoji;
     if (percent >= 80) emoji = "🎉";
     else if (percent >= 50) emoji = "🙂";
     else if (percent >= 30) emoji = "😐";
