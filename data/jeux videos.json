@@ -1,0 +1,30 @@
+[
+  {
+   "question": "Dans quel jeu se déroule l'histoire à Night City ?",
+   "choices": ["Watch Dogs", "Sleeping Dogs", "Starfield", "Cyberpunk 2077"],
+   "answer": 3,
+   "category": "Jeux Vidéos",
+   "difficulty": "easy"
+  },
+  {
+   "question": "[The Witcher 3] Qui Geralt cherche-t-il a retrouvé ?",
+   "choices": ["Yennefer", "Ciri", "Jaskier", "Triss"],
+   "answer": 1,
+   "category": "Jeux Vidéos",
+   "difficulty": "easy"
+  },
+  {
+   "question": "[The Witcher 3] Quel est le nom du refuge des sorceleurs ?",
+   "choices": ["Novigrad", "Velen", "Kaer Morhen", "Oxenfurt"],
+   "answer": 2,
+   "category": "Jeux Vidéos",
+   "difficulty": "medium"
+  },
+  {
+   "question": "[Just Cause 3] Où Rico retrouve-t-il le régime de Sebastiano Di Ravello ?",
+   "choices": ["Medici", "Solis", "San Esperito", "Panau"],
+   "answer": 0,
+   "category": "Jeux Vidéos",
+   "difficulty": "medium"
+  }
+]
