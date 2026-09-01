@@ -50,17 +50,26 @@ body {
     background: #dcdcdc;
 }
 
+/* CONTENEUR QUI DOIT AVOIR LA PERSPECTIVE */
 .flashcard-container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+
+    /* CORRECTION IMPORTANTE */
+    perspective: 1200px;
 }
 
+/* LA CARTE DOIT AVOIR LE MODE 3D */
 .flashcard {
     width: 500px;
     height: 350px;
-    perspective: 1200px;
+
+    /* CORRECTION IMPORTANTE */
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
 }
 
 .flashcard .front,
@@ -75,13 +84,14 @@ body {
     background: white;
     transition: background 0.2s ease;
 }
+
 #question {
-    font-size: 1.6rem;        /* texte plus grand */
-    font-weight: 600;         /* plus lisible */
-    min-height: 120px;        /* occupe plus d’espace */
+    font-size: 1.6rem;
+    font-weight: 600;
+    min-height: 120px;
     display: flex;
-    justify-content: center;  /* centré horizontalement */
-    align-items: center;      /* centré verticalement */
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
@@ -107,12 +117,8 @@ body {
 }
 
 /* Flip animation */
-.flashcard.flip .front {
+.flashcard.flip {
     transform: rotateY(180deg);
-}
-
-.flashcard.flip .back {
-    transform: rotateY(360deg);
 }
 
 /* Answers */
@@ -178,3 +184,4 @@ body {
 #restart-btn:hover, #home-btn:hover {
     background: #dcdcdc;
 }
+
