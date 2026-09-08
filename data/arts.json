@@ -1,0 +1,30 @@
+[
+  {
+   "question": "Qui est l'origine du tableau The Starry Night ?",
+   "choices": ["Vincent Van Gogh", "Claude Monet", "Edvard Munch", "Henri Matisse"],
+   "answer": 0,
+   "category": "Arts",
+   "difficulty": "easy"
+  },
+  {
+   "question": "Qui a peint la naissance de Vénus ?",
+   "choices": ["Sandro Botticelli", "Raphaël", "Le Caravage", "Titien"],
+   "answer": 0,
+   "category": "Arts",
+   "difficulty": "easy"
+  },
+  {
+   "question": "Qui a peint Le Sacre de Napoléon ?",
+   "choices": ["Jean-Auguste-Dominique Ingres", "Antoine-Jean Gros", "Eugène Delacroix", "Jaques-Louis David"],
+   "answer": 3,
+   "category": "Arts",
+   "difficulty": "easy"
+  },
+  {
+   "question": "Quel mouvement artistique caractérise le travail de Claude Monet ?",
+   "choices": [" Le Réalisme", "L’Impressionisme", "Le Romantisme", "Le Pointillisme"],
+   "answer": 1,
+   "category": "Arts",
+   "difficulty": "easy"
+  }
+]
