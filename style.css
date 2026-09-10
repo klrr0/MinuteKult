@@ -58,6 +58,9 @@ body.geographie .flashcard-container {
     align-items: center;
     min-height: 100vh;
     perspective: 1200px;
+
+    /* IMPORTANT : transparent pour laisser voir le fond PNG */
+    background: transparent !important;
 }
 
 /* Carte */
@@ -149,3 +152,4 @@ body.geographie .flashcard-container {
     transition: 0.2s;
 }
 #restart-btn:hover, #home-btn:hover { background: #dcdcdc; }
+
