@@ -22,18 +22,14 @@ body {
     animation-delay: 2s;
 }
 
-.hidden {
-    display: none;
-}
+.hidden { display: none; }
 
 @keyframes fadeOut {
     to { opacity: 0; visibility: hidden; }
 }
 
 /* Home screen */
-#home-screen {
-    margin-top: 60px;
-}
+#home-screen { margin-top: 60px; }
 
 .theme-btn {
     padding: 15px 25px;
@@ -45,12 +41,9 @@ body {
     cursor: pointer;
     transition: 0.2s;
 }
+.theme-btn:hover { background: #dcdcdc; }
 
-.theme-btn:hover {
-    background: #dcdcdc;
-}
-
-/* FOND PNG UNIQUEMENT POUR LE THÈME GEOGRAPHIE */
+/* FOND PNG UNIQUEMENT POUR GEOGRAPHIE */
 body.geographie .flashcard-container {
     background-image: url("assets/img/themes/geographie.png");
     background-size: cover;
@@ -58,21 +51,19 @@ body.geographie .flashcard-container {
     background-repeat: no-repeat;
 }
 
-/* CONTENEUR QUI DOIT AVOIR LA PERSPECTIVE */
+/* Conteneur de la carte */
 .flashcard-container {
-    display: flex;
+    display: none; /* caché sur l'accueil */
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-
     perspective: 1200px;
 }
 
-/* LA CARTE DOIT AVOIR LE MODE 3D */
+/* Carte */
 .flashcard {
     width: 500px;
     height: 350px;
-
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.6s ease;
@@ -89,7 +80,6 @@ body.geographie .flashcard-container {
     padding: 20px;
     box-sizing: border-box;
     background: white;
-    transition: background 0.2s ease;
 }
 
 /* Face arrière */
@@ -101,7 +91,7 @@ body.geographie .flashcard-container {
     text-align: center;
 }
 
-/* Flip animation */
+/* Flip */
 .flashcard.flip {
     transform: rotateY(180deg);
 }
@@ -118,9 +108,7 @@ body.geographie .flashcard-container {
 }
 
 /* Réponses */
-.answers {
-    margin-top: 20px;
-}
+.answers { margin-top: 20px; }
 
 .answers button {
     display: block;
@@ -133,32 +121,16 @@ body.geographie .flashcard-container {
     cursor: pointer;
     transition: 0.2s;
 }
+.answers button:hover { background: #dcdcdc; }
 
-.answers button:hover {
-    background: #dcdcdc;
-}
+.answers button.correct { background: #c8f7c5 !important; }
+.answers button.wrong { background: #f7c5c5 !important; }
 
-/* Feedback */
-.answers button.correct {
-    background: #c8f7c5 !important;
-}
-
-.answers button.wrong {
-    background: #f7c5c5 !important;
-}
-
-.back.correct {
-    background: #c8f7c5 !important;
-}
-
-.back.wrong {
-    background: #f7c5c5 !important;
-}
+.back.correct { background: #c8f7c5 !important; }
+.back.wrong { background: #f7c5c5 !important; }
 
 /* Final card */
-.final-card {
-    padding: 20px;
-}
+.final-card { padding: 20px; }
 
 .final-buttons {
     display: flex;
@@ -176,7 +148,4 @@ body.geographie .flashcard-container {
     background: #ececec;
     transition: 0.2s;
 }
-
-#restart-btn:hover, #home-btn:hover {
-    background: #dcdcdc;
-}
+#restart-btn:hover, #home-btn:hover { background: #dcdcdc; }
