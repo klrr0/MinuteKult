@@ -43,8 +43,8 @@ body {
 }
 .theme-btn:hover { background: #dcdcdc; }
 
-/* FOND PNG UNIQUEMENT POUR GEOGRAPHIE */
-body.geographie .flashcard-container {
+/* FOND PNG POUR GEOGRAPHIE — SUR TOUT LE BODY */
+body.geographie {
     background-image: url("assets/img/themes/geographie.png");
     background-size: cover;
     background-position: center;
