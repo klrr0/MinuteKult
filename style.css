@@ -50,6 +50,14 @@ body {
     background: #dcdcdc;
 }
 
+/* FOND PNG UNIQUEMENT POUR LE THÈME GEOGRAPHIE */
+body.geographie .flashcard-container {
+    background-image: url("assets/img/geographie.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 /* CONTENEUR QUI DOIT AVOIR LA PERSPECTIVE */
 .flashcard-container {
     display: flex;
@@ -57,7 +65,6 @@ body {
     align-items: center;
     min-height: 100vh;
 
-    /* CORRECTION IMPORTANTE */
     perspective: 1200px;
 }
 
@@ -66,7 +73,6 @@ body {
     width: 500px;
     height: 350px;
 
-    /* CORRECTION IMPORTANTE */
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.6s ease;

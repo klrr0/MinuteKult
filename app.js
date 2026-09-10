@@ -25,11 +25,13 @@ document.querySelectorAll(".theme-btn").forEach(btn => {
     btn.onclick = () => {
         const theme = btn.dataset.theme;
 
+        // Active le fond du thème
+        document.body.className = theme;
+
         fetch(`./data/${theme}.json`)
             .then(res => res.json())
             .then(data => {
 
-                // Correction : difficultés en anglais
                 const order = { 
                     easy: 1, 
                     medium: 2, 
