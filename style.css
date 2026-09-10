@@ -63,6 +63,10 @@ body.geographie .flashcard-container {
     background: transparent !important;
 }
 
+body.geographie .flashcard-container {
+    background-color: red !important;
+}
+
 /* Carte */
 .flashcard {
     width: 500px;
