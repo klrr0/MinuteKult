@@ -52,7 +52,7 @@ body {
 
 /* FOND PNG UNIQUEMENT POUR LE THÈME GEOGRAPHIE */
 body.geographie .flashcard-container {
-    background-image: url("assets/img/geographie.png");
+    background-image: url("assets/img/themes/geographie.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -78,6 +78,7 @@ body.geographie .flashcard-container {
     transition: transform 0.6s ease;
 }
 
+/* Faces */
 .flashcard .front,
 .flashcard .back {
     width: 100%;
@@ -91,6 +92,21 @@ body.geographie .flashcard-container {
     transition: background 0.2s ease;
 }
 
+/* Face arrière */
+.flashcard .back {
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Flip animation */
+.flashcard.flip {
+    transform: rotateY(180deg);
+}
+
+/* Question */
 #question {
     font-size: 1.6rem;
     font-weight: 600;
@@ -101,33 +117,7 @@ body.geographie .flashcard-container {
     text-align: center;
 }
 
-/* Front: question + réponses en bas */
-.flashcard .front {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-/* Back: centré */
-.flashcard .back {
-    transform: rotateY(180deg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.correct-answer {
-    font-size: 1.4rem;
-    font-weight: 600;
-}
-
-/* Flip animation */
-.flashcard.flip {
-    transform: rotateY(180deg);
-}
-
-/* Answers */
+/* Réponses */
 .answers {
     margin-top: 20px;
 }
@@ -190,4 +180,3 @@ body.geographie .flashcard-container {
 #restart-btn:hover, #home-btn:hover {
     background: #dcdcdc;
 }
-
