@@ -1,7 +1,9 @@
+// Variables globales
 let questions = [];
 let questionIndex = 0;
 let score = 0;
 
+// Écrans
 const splash = document.getElementById("splash-screen");
 const home = document.getElementById("home-screen");
 const card = document.getElementById("card");
@@ -12,31 +14,54 @@ setTimeout(() => {
     home.classList.remove("hidden");
 }, 2500);
 
-// Choix du thème
+
+// -----------------------------
+// CHOIX DU THÈME + TRI DIFFICULTÉ
+// -----------------------------
 document.querySelectorAll(".theme-btn").forEach(btn => {
     btn.onclick = () => {
-        const theme = btn.dataset.theme.trim().toLowerCase();
 
+        let theme = btn.dataset.theme;
+
+        // Nettoyage du thème pour éviter les espaces / accents / casse
+        theme = theme.trim().toLowerCase().replace(/\s+/g, "");
+
+        console.log("Thème sélectionné :", theme);
+
+        // Applique la classe au body (pour le fond PNG)
         document.body.className = theme;
+
+        // Affiche la carte
         document.querySelector(".flashcard-container").style.display = "flex";
 
+        // Charge le JSON du thème
         fetch(`./data/${theme}.json`)
             .then(res => res.json())
             .then(data => {
-                const order = { easy: 1, medium: 2, hard: 3 };
+
+                const order = { 
+                    easy: 1, 
+                    medium: 2, 
+                    hard: 3 
+                };
+
                 questions = data.sort((a, b) => order[a.difficulty] - order[b.difficulty]);
 
                 questionIndex = 0;
                 score = 0;
 
                 home.classList.add("hidden");
+
                 afficherQuestion(questionIndex);
             })
             .catch(err => console.error("Erreur JSON :", err));
     };
 });
 
-// Afficher une question
+
+// -----------------------------
+// AFFICHER UNE QUESTION
+// -----------------------------
 function afficherQuestion(index) {
     const q = questions[index];
 
@@ -51,6 +76,7 @@ function afficherQuestion(index) {
 
         btn.onclick = () => {
             const isCorrect = (i === q.answer);
+
             if (isCorrect) score++;
 
             document.getElementById("correct-answer").textContent =
@@ -88,7 +114,10 @@ function afficherQuestion(index) {
     });
 }
 
-// Fin du quiz
+
+// -----------------------------
+// FIN DU QUIZ
+// -----------------------------
 function afficherFin() {
     const total = questions.length;
     const percent = Math.round((score / total) * 100);
@@ -115,14 +144,22 @@ function afficherFin() {
     document.getElementById("answers").innerHTML = "";
     document.getElementById("correct-answer").textContent = "";
 
+    // Rejouer
     document.getElementById("restart-btn").onclick = () => {
         score = 0;
         questionIndex = 0;
         afficherQuestion(questionIndex);
     };
 
+    // Retour à l'accueil
     document.getElementById("home-btn").onclick = () => {
+
+        // Cache la carte
         document.querySelector(".flashcard-container").style.display = "none";
+
+        // Retire le fond du thème
+        document.body.className = "";
+
         home.classList.remove("hidden");
         score = 0;
         questionIndex = 0;
