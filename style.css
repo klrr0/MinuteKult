@@ -45,7 +45,7 @@ body {
 
 /* FOND PNG UNIQUEMENT POUR GEOGRAPHIE */
 body.geographie .flashcard-container {
-    background-image: url("/MinuteKult/assets/img/themes/geographie.png");
+    background-image: url("https://klrr0.github.io/MinuteKult/assets/img/themes/geographie.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -61,10 +61,6 @@ body.geographie .flashcard-container {
 
     /* IMPORTANT : transparent pour laisser voir le fond PNG */
     background: transparent !important;
-}
-
-body.geographie .flashcard-container {
-    background-color: red !important;
 }
 
 /* Carte */
