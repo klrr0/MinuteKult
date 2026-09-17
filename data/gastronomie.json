@@ -1,0 +1,30 @@
+[
+  {
+   "question": "De quel pays est originaire le Katsudon ?",
+   "choices": ["Chine", "Viêt-Nam", "Corée du Sud", "Japon"],
+   "answer": 3,
+   "category": "Gastronomie",
+   "difficulty": "medium"
+  },
+  {
+   "question": "Quel aliment est traditionnellement cuit au torchon en cuisine française ?",
+   "choices": ["Foie gras", "Viande", "Poisson", "Légumes"],
+   "answer": 0,
+   "category": "Gastronomie",
+   "difficulty": "easy"
+  },
+  {
+   "question": "Quel fromage français est utilisé dans la préparation de l’aligot ?",
+   "choices": ["Le comté", "Le roquefort", "Le reblochon", "La tome"],
+   "answer": 3,
+   "category": "Gastronomie",
+   "difficulty": "easy"
+  },
+  {
+   "question": "De quel endroit le poke bowl est-il originaire ?",
+   "choices": ["Japon", "Mongolie", "Viêt-Nam", "Hawaii"],
+   "answer": 3,
+   "category": "Gastronomie",
+   "difficulty": "easy"
+  }
+]

@@ -23,7 +23,7 @@ document.querySelectorAll(".theme-btn").forEach(btn => {
 
         let theme = btn.dataset.theme;
 
-        // Nettoyage du thème pour éviter les espaces / accents / casse
+        // Nettoyage du thème
         theme = theme.trim().toLowerCase().replace(/\s+/g, "");
 
         console.log("Thème sélectionné :", theme);
@@ -36,8 +36,20 @@ document.querySelectorAll(".theme-btn").forEach(btn => {
 
         // Charge le JSON du thème
         fetch(`./data/${theme}.json`)
-            .then(res => res.json())
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error("JSON introuvable");
+                }
+                return res.json();
+            })
             .then(data => {
+
+                // Vérifie si le JSON est vide
+                if (!data || data.length === 0) {
+                    alert("Ce quiz n'est pas encore disponible !");
+                    resetToHome();
+                    return;
+                }
 
                 const order = { 
                     easy: 1, 
@@ -54,9 +66,31 @@ document.querySelectorAll(".theme-btn").forEach(btn => {
 
                 afficherQuestion(questionIndex);
             })
-            .catch(err => console.error("Erreur JSON :", err));
+            .catch(err => {
+                console.error("Erreur JSON :", err);
+                alert("Ce quiz n'est pas encore disponible !");
+                resetToHome();
+            });
     };
 });
+
+
+// -----------------------------
+// RESET → Retour à l'accueil propre
+// -----------------------------
+function resetToHome() {
+    document.body.className = "";
+    document.querySelector(".flashcard-container").style.display = "none";
+    home.classList.remove("hidden");
+
+    questions = [];
+    questionIndex = 0;
+    score = 0;
+
+    document.getElementById("question").innerHTML = "";
+    document.getElementById("answers").innerHTML = "";
+    document.getElementById("correct-answer").textContent = "";
+}
 
 
 // -----------------------------
@@ -153,15 +187,6 @@ function afficherFin() {
 
     // Retour à l'accueil
     document.getElementById("home-btn").onclick = () => {
-
-        // Cache la carte
-        document.querySelector(".flashcard-container").style.display = "none";
-
-        // Retire le fond du thème
-        document.body.className = "";
-
-        home.classList.remove("hidden");
-        score = 0;
-        questionIndex = 0;
+        resetToHome();
     };
 }
