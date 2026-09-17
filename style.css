@@ -217,3 +217,14 @@ body.dark-mode .final-card {
 body.dark-mode.geographie {
     background-image: url("assets/img/themes/geographie.png") !important;
 }
+/* Le texte du dos de la carte reste noir en toutes circonstances */
+.flashcard .back,
+#correct-answer {
+    color: #000 !important;
+}
+
+/* Même en mode sombre */
+body.dark-mode .flashcard .back,
+body.dark-mode #correct-answer {
+    color: #000 !important;
+}
