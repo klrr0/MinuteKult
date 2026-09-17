@@ -3,11 +3,6 @@ let questions = [];
 let questionIndex = 0;
 let score = 0;
 
-// Mode sombre
-document.getElementById("dark-toggle").onclick = () => {
-    document.body.classList.toggle("dark-mode");
-};
-
 // Écrans
 const splash = document.getElementById("splash-screen");
 const home = document.getElementById("home-screen");
@@ -21,20 +16,36 @@ setTimeout(() => {
 
 
 // -----------------------------
+// MODE SOMBRE
+// -----------------------------
+document.getElementById("dark-toggle").onclick = () => {
+    document.body.classList.toggle("dark-mode");
+};
+
+
+// -----------------------------
 // CHOIX DU THÈME + TRI DIFFICULTÉ
 // -----------------------------
 document.querySelectorAll(".theme-btn").forEach(btn => {
     btn.onclick = () => {
 
-        let theme = btn.dataset.theme;
-
-        // Nettoyage du thème
-        theme = theme.trim().toLowerCase().replace(/\s+/g, "");
+        let theme = btn.dataset.theme.trim().toLowerCase().replace(/\s+/g, "");
 
         console.log("Thème sélectionné :", theme);
 
-        // Applique la classe au body (pour le fond PNG)
-        document.body.className = theme;
+        // Vérifie si le mode sombre est actif AVANT de changer le thème
+        const dark = document.body.classList.contains("dark-mode");
+
+        // Reset des classes du body
+        document.body.className = "";
+
+        // Applique le thème
+        document.body.classList.add(theme);
+
+        // Réactive le mode sombre si nécessaire
+        if (dark) {
+            document.body.classList.add("dark-mode");
+        }
 
         // Affiche la carte
         document.querySelector(".flashcard-container").style.display = "flex";
@@ -42,25 +53,18 @@ document.querySelectorAll(".theme-btn").forEach(btn => {
         // Charge le JSON du thème
         fetch(`./data/${theme}.json`)
             .then(res => {
-                if (!res.ok) {
-                    throw new Error("JSON introuvable");
-                }
+                if (!res.ok) throw new Error("JSON introuvable");
                 return res.json();
             })
             .then(data => {
 
-                // Vérifie si le JSON est vide
                 if (!data || data.length === 0) {
                     alert("Ce quiz n'est pas encore disponible !");
                     resetToHome();
                     return;
                 }
 
-                const order = { 
-                    easy: 1, 
-                    medium: 2, 
-                    hard: 3 
-                };
+                const order = { easy: 1, medium: 2, hard: 3 };
 
                 questions = data.sort((a, b) => order[a.difficulty] - order[b.difficulty]);
 
@@ -84,7 +88,15 @@ document.querySelectorAll(".theme-btn").forEach(btn => {
 // RESET → Retour à l'accueil propre
 // -----------------------------
 function resetToHome() {
+
+    const dark = document.body.classList.contains("dark-mode");
+
     document.body.className = "";
+
+    if (dark) {
+        document.body.classList.add("dark-mode");
+    }
+
     document.querySelector(".flashcard-container").style.display = "none";
     home.classList.remove("hidden");
 
@@ -195,3 +207,4 @@ function afficherFin() {
         resetToHome();
     };
 }
+

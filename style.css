@@ -68,13 +68,11 @@ body.geographie {
 
 /* Conteneur de la carte */
 .flashcard-container {
-    display: none; /* caché sur l'accueil */
+    display: none;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     perspective: 1200px;
-
-    /* IMPORTANT : transparent pour laisser voir le fond PNG */
     background: transparent !important;
 }
 
@@ -215,7 +213,7 @@ body.dark-mode .final-card {
     color: #e6e6e6;
 }
 
-/* Mode sombre + géographie = garder le fond PNG */
+/* Mode sombre + thème = garder le PNG du thème */
 body.dark-mode.geographie {
     background-image: url("assets/img/themes/geographie.png") !important;
 }
