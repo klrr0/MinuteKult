@@ -43,6 +43,21 @@ body {
 }
 .theme-btn:hover { background: #dcdcdc; }
 
+/* Bouton mode sombre */
+#dark-toggle {
+    padding: 10px 20px;
+    margin: 15px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: none;
+    background: #e0e0e0;
+    cursor: pointer;
+    transition: 0.2s;
+}
+#dark-toggle:hover {
+    background: #cfcfcf;
+}
+
 /* FOND PNG POUR GEOGRAPHIE — SUR TOUT LE BODY */
 body.geographie {
     background-image: url("assets/img/themes/geographie.png");
@@ -153,3 +168,54 @@ body.geographie {
 }
 #restart-btn:hover, #home-btn:hover { background: #dcdcdc; }
 
+
+/* ------------------------------------------------ */
+/*                     MODE SOMBRE                 */
+/* ------------------------------------------------ */
+
+body.dark-mode {
+    background: #121212 !important;
+    color: #e6e6e6;
+}
+
+/* Boutons */
+body.dark-mode .theme-btn,
+body.dark-mode #restart-btn,
+body.dark-mode #home-btn,
+body.dark-mode #dark-toggle {
+    background: #2a2a2a;
+    color: #e6e6e6;
+}
+body.dark-mode .theme-btn:hover,
+body.dark-mode #restart-btn:hover,
+body.dark-mode #home-btn:hover,
+body.dark-mode #dark-toggle:hover {
+    background: #3a3a3a;
+}
+
+/* Carte */
+body.dark-mode .flashcard .front,
+body.dark-mode .flashcard .back {
+    background: #1e1e1e;
+    color: #e6e6e6;
+}
+
+/* Réponses */
+body.dark-mode .answers button {
+    background: #2a2a2a;
+    color: #e6e6e6;
+}
+body.dark-mode .answers button:hover {
+    background: #3a3a3a;
+}
+
+/* Final card */
+body.dark-mode .final-card {
+    background: #1e1e1e;
+    color: #e6e6e6;
+}
+
+/* Mode sombre + géographie = garder le fond PNG */
+body.dark-mode.geographie {
+    background-image: url("assets/img/themes/geographie.png") !important;
+}

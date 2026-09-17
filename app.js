@@ -3,6 +3,11 @@ let questions = [];
 let questionIndex = 0;
 let score = 0;
 
+// Mode sombre
+document.getElementById("dark-toggle").onclick = () => {
+    document.body.classList.toggle("dark-mode");
+};
+
 // Écrans
 const splash = document.getElementById("splash-screen");
 const home = document.getElementById("home-screen");
