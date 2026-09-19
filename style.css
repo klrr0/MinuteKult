@@ -135,7 +135,7 @@ body.dark-mode .tab.active {
     font-weight: 700;
     border-radius: 18px;
     border: none;
-    background: #ffffff; /* Fond neutre, pas le PNG du body */
+    background: #ffffff; /* Fond neutre */
     cursor: pointer;
     transition: 0.25s;
     box-shadow: 0 4px 12px rgba(0,0,0,0.12);
@@ -150,7 +150,7 @@ body.dark-mode .tab.active {
 
     /* Lisibilité */
     color: #000;
-    text-shadow: 0 0 8px rgba(255,255,255,0.8);
+    text-shadow: none;
 }
 
 .theme-btn:hover {
@@ -163,37 +163,10 @@ body.dark-mode .tab.active {
 body.dark-mode .theme-btn {
     background: #1e1e1e; /* Fond sombre neutre */
     color: #e6e6e6;
-    text-shadow: none;
 }
 
 body.dark-mode .theme-btn:hover {
     background: #2a2a2a;
-}
-
-/* PNG EXEMPLE — tu peux en ajouter autant que tu veux */
-.theme-btn[data-theme="cinema"] {
-    background-image: url("assets/img/themes/cinema.png");
-}
-
-.theme-btn[data-theme="sport"] {
-    background-image: url("assets/img/themes/sport.png");
-}
-
-.theme-btn[data-theme="geographie"] {
-    background-image: url("assets/img/themes/geographie.png");
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-    #themes-buttons {
-        grid-template-columns: repeat(1, 1fr); /* 1 par ligne sur mobile */
-        gap: 20px;
-    }
-
-    .theme-btn {
-        padding: 28px 20px;
-        font-size: 1.4rem;
-    }
 }
 
 /* ------------------------------------------------ */
@@ -355,6 +328,13 @@ body.dark-mode #home-btn:hover {
         padding: 28px 20px;
         font-size: 1.4rem;
     }
+
+    .flashcard {
+        width: 90%;
+        height: auto;
+        min-height: 300px;
+    }
 }
+
 
 
