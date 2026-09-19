@@ -89,11 +89,19 @@ document.querySelectorAll(".theme-btn").forEach(btn => {
                     return;
                 }
 
+                // Correspondance FR → EN
+                const diffMap = {
+                    facile: "easy",
+                    moyenne: "medium",
+                    difficile: "hard"
+                };
+
                 // Filtrage selon la difficulté
                 if (selectedDifficulty === "aleatoire") {
                     questions = data.sort(() => Math.random() - 0.5);
                 } else {
-                    questions = data.filter(q => q.difficulty === selectedDifficulty);
+                    const diffEN = diffMap[selectedDifficulty];
+                    questions = data.filter(q => q.difficulty === diffEN);
                 }
 
                 if (questions.length === 0) {
@@ -102,7 +110,7 @@ document.querySelectorAll(".theme-btn").forEach(btn => {
                     return;
                 }
 
-                // Trie pour garder ton ordre easy → medium → hard
+                // Trie easy → medium → hard
                 const order = { easy: 1, medium: 2, hard: 3 };
                 questions.sort((a, b) => order[a.difficulty] - order[b.difficulty]);
 
