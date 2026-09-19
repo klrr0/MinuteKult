@@ -116,13 +116,13 @@ body.dark-mode .tab.active {
 }
 
 /* ------------------------------------------------ */
-/*                     THÈMES (BANNIÈRES)           */
+/*                     THÈMES (BANNIÈRES 2 PAR LIGNE) */
 /* ------------------------------------------------ */
 
 #themes-buttons {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* 2 ou 3 par ligne */
-    gap: 25px;
+    grid-template-columns: repeat(2, 1fr); /* Toujours 2 par ligne */
+    gap: 30px;
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
@@ -130,35 +130,38 @@ body.dark-mode .tab.active {
 
 .theme-btn {
     position: relative;
-    padding: 25px;
-    font-size: 1.4rem;
+    padding: 35px 25px; /* Plus grande bannière */
+    font-size: 1.6rem; /* Texte plus grand */
     font-weight: 700;
-    border-radius: 15px;
+    border-radius: 18px;
     border: none;
-    background: #ffffff;
+    background: #ffffff; /* Fond neutre, pas le PNG du body */
     cursor: pointer;
     transition: 0.25s;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 
-    /* Pour les futurs PNG */
+    /* PNG futur */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
-    /* Texte lisible même avec PNG */
+    /* Texte aligné à gauche */
+    text-align: left;
+
+    /* Lisibilité */
     color: #000;
     text-shadow: 0 0 8px rgba(255,255,255,0.8);
 }
 
 .theme-btn:hover {
     transform: translateY(-6px);
-    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.18);
     background-color: #f2f2f2;
 }
 
 /* Mode sombre */
 body.dark-mode .theme-btn {
-    background: #1e1e1e;
+    background: #1e1e1e; /* Fond sombre neutre */
     color: #e6e6e6;
     text-shadow: none;
 }
@@ -167,15 +170,30 @@ body.dark-mode .theme-btn:hover {
     background: #2a2a2a;
 }
 
-/* Exemple PNG (tu peux en ajouter autant que tu veux) */
+/* PNG EXEMPLE — tu peux en ajouter autant que tu veux */
 .theme-btn[data-theme="cinema"] {
     background-image: url("assets/img/themes/cinema.png");
 }
+
 .theme-btn[data-theme="sport"] {
     background-image: url("assets/img/themes/sport.png");
 }
+
 .theme-btn[data-theme="geographie"] {
     background-image: url("assets/img/themes/geographie.png");
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    #themes-buttons {
+        grid-template-columns: repeat(1, 1fr); /* 1 par ligne sur mobile */
+        gap: 20px;
+    }
+
+    .theme-btn {
+        padding: 28px 20px;
+        font-size: 1.4rem;
+    }
 }
 
 /* ------------------------------------------------ */
@@ -328,29 +346,14 @@ body.dark-mode #home-btn:hover {
 /* ------------------------------------------------ */
 
 @media (max-width: 600px) {
-    .flashcard {
-        width: 90%;
-        height: auto;
-        min-height: 300px;
-    }
-
-    #difficulty-tabs {
-        gap: 10px;
-    }
-
-    .tab {
-        padding: 10px 15px;
-        font-size: 1rem;
-    }
-
     #themes-buttons {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 15px;
+        grid-template-columns: repeat(1, 1fr); /* 1 par ligne sur mobile */
+        gap: 20px;
     }
 
     .theme-btn {
-        padding: 20px;
-        font-size: 1.2rem;
+        padding: 28px 20px;
+        font-size: 1.4rem;
     }
 }
 
