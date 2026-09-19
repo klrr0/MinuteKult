@@ -2,6 +2,7 @@
 let questions = [];
 let questionIndex = 0;
 let score = 0;
+let selectedDifficulty = null;
 
 // Écrans
 const splash = document.getElementById("splash-screen");
@@ -24,10 +25,34 @@ document.getElementById("dark-toggle").onclick = () => {
 
 
 // -----------------------------
-// CHOIX DU THÈME + TRI DIFFICULTÉ
+// ONGLET DE DIFFICULTÉ
+// -----------------------------
+document.querySelectorAll(".tab").forEach(tab => {
+    tab.onclick = () => {
+
+        // Enregistre la difficulté choisie
+        selectedDifficulty = tab.dataset.diff;
+
+        // Active l'onglet cliqué
+        document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
+
+        // Affiche les thèmes
+        document.getElementById("themes-buttons").classList.remove("hidden");
+    };
+});
+
+
+// -----------------------------
+// CHOIX DU THÈME
 // -----------------------------
 document.querySelectorAll(".theme-btn").forEach(btn => {
     btn.onclick = () => {
+
+        if (!selectedDifficulty) {
+            alert("Choisis d'abord une difficulté !");
+            return;
+        }
 
         let theme = btn.dataset.theme.trim().toLowerCase().replace(/\s+/g, "");
 
@@ -39,7 +64,7 @@ document.querySelectorAll(".theme-btn").forEach(btn => {
         // Reset des classes du body
         document.body.className = "";
 
-        // Applique le thème
+        // Applique le thème PNG
         document.body.classList.add(theme);
 
         // Réactive le mode sombre si nécessaire
@@ -64,9 +89,22 @@ document.querySelectorAll(".theme-btn").forEach(btn => {
                     return;
                 }
 
-                const order = { easy: 1, medium: 2, hard: 3 };
+                // Filtrage selon la difficulté
+                if (selectedDifficulty === "aleatoire") {
+                    questions = data.sort(() => Math.random() - 0.5);
+                } else {
+                    questions = data.filter(q => q.difficulty === selectedDifficulty);
+                }
 
-                questions = data.sort((a, b) => order[a.difficulty] - order[b.difficulty]);
+                if (questions.length === 0) {
+                    alert("Aucune question pour cette difficulté !");
+                    resetToHome();
+                    return;
+                }
+
+                // Trie pour garder ton ordre easy → medium → hard
+                const order = { easy: 1, medium: 2, hard: 3 };
+                questions.sort((a, b) => order[a.difficulty] - order[b.difficulty]);
 
                 questionIndex = 0;
                 score = 0;
@@ -103,6 +141,12 @@ function resetToHome() {
     questions = [];
     questionIndex = 0;
     score = 0;
+
+    selectedDifficulty = null;
+
+    // Reset onglets
+    document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+    document.getElementById("themes-buttons").classList.add("hidden");
 
     document.getElementById("question").innerHTML = "";
     document.getElementById("answers").innerHTML = "";
