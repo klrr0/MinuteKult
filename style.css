@@ -121,7 +121,7 @@ body.dark-mode .tab.active {
 
 #themes-buttons {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Toujours 2 par ligne */
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     max-width: 900px;
     margin: 0 auto;
@@ -130,12 +130,12 @@ body.dark-mode .tab.active {
 
 .theme-btn {
     position: relative;
-    padding: 35px 25px; /* Plus grande bannière */
-    font-size: 1.6rem; /* Texte plus grand */
+    padding: 35px 25px;
+    font-size: 1.6rem;
     font-weight: 700;
     border-radius: 18px;
     border: none;
-    background: #ffffff; /* Fond neutre */
+    background: #ffffff; /* Aucun fond PNG */
     cursor: pointer;
     transition: 0.25s;
     box-shadow: 0 4px 12px rgba(0,0,0,0.12);
@@ -145,12 +145,8 @@ body.dark-mode .tab.active {
     background-position: center;
     background-repeat: no-repeat;
 
-    /* Texte aligné à gauche */
     text-align: left;
-
-    /* Lisibilité */
     color: #000;
-    text-shadow: none;
 }
 
 .theme-btn:hover {
@@ -159,9 +155,8 @@ body.dark-mode .tab.active {
     background-color: #f2f2f2;
 }
 
-/* Mode sombre */
 body.dark-mode .theme-btn {
-    background: #1e1e1e; /* Fond sombre neutre */
+    background: #1e1e1e;
     color: #e6e6e6;
 }
 
@@ -178,10 +173,15 @@ body.geographie {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed; /* empêche le zoom */
 }
 
 body.dark-mode.geographie {
     background-image: url("assets/img/themes/geographie.png") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
 }
 
 /* ------------------------------------------------ */
@@ -217,7 +217,6 @@ body.dark-mode.geographie {
     background: white;
 }
 
-/* Face arrière */
 .flashcard .back {
     transform: rotateY(180deg);
     display: flex;
@@ -226,12 +225,10 @@ body.dark-mode.geographie {
     text-align: center;
 }
 
-/* Flip */
 .flashcard.flip {
     transform: rotateY(180deg);
 }
 
-/* Question */
 #question {
     font-size: 1.6rem;
     font-weight: 600;
@@ -242,7 +239,6 @@ body.dark-mode.geographie {
     text-align: center;
 }
 
-/* Réponses */
 .answers { margin-top: 20px; }
 
 .answers button {
@@ -264,7 +260,6 @@ body.dark-mode.geographie {
 .back.correct { background: #c8f7c5 !important; }
 .back.wrong { background: #f7c5c5 !important; }
 
-/* Texte du dos toujours noir */
 .flashcard .back,
 #correct-answer {
     color: #000 !important;
@@ -274,7 +269,6 @@ body.dark-mode #correct-answer {
     color: #000 !important;
 }
 
-/* Face avant sombre en mode sombre */
 body.dark-mode .flashcard .front {
     background: #1e1e1e !important;
     color: #e6e6e6 !important;
@@ -320,7 +314,7 @@ body.dark-mode #home-btn:hover {
 
 @media (max-width: 600px) {
     #themes-buttons {
-        grid-template-columns: repeat(1, 1fr); /* 1 par ligne sur mobile */
+        grid-template-columns: repeat(1, 1fr);
         gap: 20px;
     }
 
@@ -335,6 +329,3 @@ body.dark-mode #home-btn:hover {
         min-height: 300px;
     }
 }
-
-
-
