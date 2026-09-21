@@ -170,15 +170,15 @@ body.dark-mode .theme-btn:hover {
 
 body.geographie {
     background-image: url("assets/img/themes/geographie.png");
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* empêche le zoom */
+    background-attachment: fixed;
 }
 
 body.dark-mode.geographie {
     background-image: url("assets/img/themes/geographie.png") !important;
-    background-size: cover !important;
+    background-size: contain !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
     background-attachment: fixed !important;
