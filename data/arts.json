@@ -26,5 +26,54 @@
    "answer": 1,
    "category": "Arts",
    "difficulty": "easy"
+  },
+  {
+   "question":"Qui a forgé le concept d'art brut ?",
+   "choices": ["Jean Dubuffet", "Auguste Rodin", "Hubert Robert", "Pierre Soulages"],
+   "answer": 0,
+   "category": "Arts",
+   "difficulty": "medium"
+  },
+  {
+   "question": "Quel type de paysages John Constable a-t-il particumièrement représenté dans ses peintures ?",
+   "choices": ["Paysages montagneux", "Paysages désertiques", "Paysages de la campagne anglaise", "Paysages urbains écosssais"],
+   "answer": 2,
+   "category": "Arts",
+   "difficulty": "easy"
+  },
+  {
+   "question": "A quel mouvement artistique Juan Gris est-il associé ?",
+   "choices": ["Le surréalisme", "Le romantisme", "L'impressionisme", "Le cubisme"],
+   "answer": 3,
+   "category": "Arts",
+   "difficulty": "easy"
+  },
+  {
+   "question": "Quelle oeuvre est associée à Auguste Rodin ?",
+   "choices": ["Le penseur", "La Vénus de Milo", "David", "Le Discobole"],
+   "answer": 0,
+   "category": "Arts",
+   "difficulty": "easy"
+  },
+  {
+   "question": "Dans quel musée est exposée la Vénus de Milo ?",
+   "choices": ["Musée d'Orsay", "Musée Grévin", "Musée du Louvre", "Centre Pompidou"],
+   "answer": 2,
+   "category": "Arts",
+   "difficulty": "easy"
+  },
+  {
+   "question": "Que représente la scène du tableau La Naissance de Vénus peint par William Bouguereau ?",
+   "choices": [" Le mariage de Vénus et Mars", "La métamorphose de Daphné", "Le retour d'Ulysse à Ithaque", "L'émergence de la déesse Venus"],
+   "answer": 3,
+   "category": "Arts",
+   "difficulty": "easy"
+  },
+  {
+   "question": "Que peut-on lire sous la pipe dans La Trahison des images ?",
+   "choices": ["Ceci n'est pas une pipe", "Ceci est une pipe", "Cette pipe n'existe pas", "Il est interdit de fumer"],
+   "answer": 0,
+   "category": "Arts",
+   "difficulty": "easy"
   }
 ]

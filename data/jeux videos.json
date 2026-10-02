@@ -1,0 +1,65 @@
+[
+  {
+   "question": "Dans quel jeu se déroule l'histoire à Night City ?",
+   "choices": ["Watch Dogs", "Sleeping Dogs", "Starfield", "Cyberpunk 2077"],
+   "answer": 3,
+   "category": "Jeux Vidéos",
+   "difficulty": "easy"
+  },
+  {
+   "question": "[The Witcher 3] Qui Geralt cherche-t-il a retrouvé ?",
+   "choices": ["Yennefer", "Ciri", "Jaskier", "Triss"],
+   "answer": 1,
+   "category": "Jeux Vidéos",
+   "difficulty": "easy"
+  },
+  {
+   "question": "[The Witcher 3] Quel est le nom du refuge des sorceleurs ?",
+   "choices": ["Novigrad", "Velen", "Kaer Morhen", "Oxenfurt"],
+   "answer": 2,
+   "category": "Jeux Vidéos",
+   "difficulty": "medium"
+  },
+  {
+   "question": "[Just Cause 3] Où Rico retrouve-t-il le régime de Sebastiano Di Ravello ?",
+   "choices": ["Medici", "Solis", "San Esperito", "Panau"],
+   "answer": 0,
+   "category": "Jeux Vidéos",
+   "difficulty": "medium"
+  },
+  {
+   "question": "[Wuthering Waves] Quel est le nom du group auquel appartient Scar ?",
+   "choices": ["Littoral Noir", "Fractsidus", "Chevaliers de la Nuit", "Cour de Savante"],
+   "answer": 1,
+   "category": "Jeux Vidéos",
+   "difficulty": "easy"
+  },
+  {
+   "question": "[Wuthering Waves] Quel est le rôle de Jinshi à Jinzhou ?",
+   "choices": ["Générale des Midnight Rangers", "Cheffe du Littoral Noir", "Magistrate de Jinzhou", "Médecin en chef"], 
+   "answer": 2,
+   "category": "Jeux Vidéos",
+   "difficulty": "easy"
+  },
+  {
+   "question": "Dans quel jeu vidéo Bubsy est-il apparu pour la première fois ?",
+   "choices": ["Bubsy in Claws Encounters of the Furred Kind", "Bubsy 3D", "Bubsy in Fractured Furry Tales", "Bubsy Paws on Fire"],
+   "answer": 0,
+   "category": "Jeux Vidéos",
+   "difficulty": "medium"
+  },
+  {
+   "question": "[Outer Wilds] Au bout de combien de minutes le Soleil devient-il une supernova ?",
+   "choices": ["15 minutes", "22 minutes", "25 minutes", "27 minutes"],
+   "answer": 1,
+   "category": "Jeux Vidéos",
+   "difficulty": "easy"
+  },
+  {
+   "question": "[Sea of Thieves] Quelle faction est spécialisée dans les trésors ?",
+   "choices": ["Les Gold Hoarders", "L'Order of Souls", "La Merchant Alliance", "Les Reaper's Bones"],
+   "answer": 0,
+   "category": "Jeux Vidéos",
+   "difficulty": "easy"
+  }
+]
