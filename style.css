@@ -121,48 +121,42 @@ body.dark-mode .tab.active {
 
 #themes-buttons {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
 
-    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
-    width: min(1700px, 95vw);
+    gap: 25px;
+
+    width: 95vw;
+
+    max-width: 1700px;
 
     margin: 0 auto;
+
     padding: 20px;
 }
 
 .theme-btn {
-    position: relative;
+    min-height: 110px;
 
-    min-height: 140px;
+    padding: 25px;
 
-    padding: 35px;
+    font-size: 1.5rem;
 
-    font-size: 1.8rem;
     font-weight: 700;
 
     border-radius: 18px;
+
     border: none;
 
-    background: #ffffff;
+    background: #fff;
 
     cursor: pointer;
 
-    transition: 0.25s;
-
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-
     text-align: left;
 
-    color: #000;
-}
+    transition: .25s;
 
-.theme-btn:hover {
-    transform: translateY(-6px);
-
-    box-shadow: 0 8px 18px rgba(0,0,0,0.18);
-
-    background-color: #f2f2f2;
+    box-shadow: 0 4px 12px rgba(0,0,0,.12);
 }
 
 .theme-btn:hover {
