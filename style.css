@@ -122,31 +122,47 @@ body.dark-mode .tab.active {
 #themes-buttons {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+
     gap: 30px;
-    max-width: 900px;
+
+    width: min(1700px, 95vw);
+
     margin: 0 auto;
     padding: 20px;
 }
 
 .theme-btn {
     position: relative;
-    padding: 35px 25px;
-    font-size: 1.6rem;
+
+    min-height: 140px;
+
+    padding: 35px;
+
+    font-size: 1.8rem;
     font-weight: 700;
+
     border-radius: 18px;
     border: none;
-    background: #ffffff; /* Aucun fond PNG */
+
+    background: #ffffff;
+
     cursor: pointer;
+
     transition: 0.25s;
+
     box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 
-    /* PNG futur */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
     text-align: left;
+
     color: #000;
+}
+
+.theme-btn:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+
+    background-color: #f2f2f2;
 }
 
 .theme-btn:hover {
@@ -170,18 +186,18 @@ body.dark-mode .theme-btn:hover {
 
 body.geographie {
     background-image: url("assets/img/themes/geographie.png");
-    background-size: contain;
-    background-position: center;
+    background-size: 100% auto;
+    background-position: center center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-color: #dcc58c;
 }
 
 body.dark-mode.geographie {
     background-image: url("assets/img/themes/geographie.png") !important;
-    background-size: contain !important;
-    background-position: center !important;
+    background-size: 100% auto !important;
+    background-position: center center !important;
     background-repeat: no-repeat !important;
-    background-attachment: fixed !important;
+    background-color: #dcc58c !important;
 }
 
 /* ------------------------------------------------ */
