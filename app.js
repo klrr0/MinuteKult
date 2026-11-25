@@ -9,6 +9,45 @@ const splash = document.getElementById("splash-screen");
 const home = document.getElementById("home-screen");
 const card = document.getElementById("card");
 
+// -----------------------------
+// UTILISATEUR CONNECTÉ
+// -----------------------------
+
+const pseudo = localStorage.getItem("pseudo");
+
+// Empêche l'accès si non connecté
+if (!pseudo) {
+    window.location.href = "login.html";
+}
+
+// Affiche le pseudo
+document.getElementById("username-display").textContent = pseudo;
+document.getElementById("username-display-dropdown").textContent = pseudo;
+
+// Ouvrir / fermer le menu utilisateur
+document.getElementById("user-menu-btn").onclick = (e) => {
+    e.stopPropagation();
+
+    document
+        .getElementById("user-dropdown")
+        .classList.toggle("hidden");
+};
+
+// Fermer le menu quand on clique ailleurs
+document.addEventListener("click", () => {
+    document
+        .getElementById("user-dropdown")
+        .classList.add("hidden");
+});
+
+// Déconnexion
+document.getElementById("logout-btn").onclick = () => {
+
+    localStorage.removeItem("pseudo");
+
+    window.location.href = "login.html";
+};
+
 // Splash → Home
 setTimeout(() => {
     splash.classList.add("hidden");

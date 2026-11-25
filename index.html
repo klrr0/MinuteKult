@@ -10,6 +10,30 @@
 <!-- Bouton mode sombre -->
 <button id="dark-toggle">🌙</button>
 
+<div id="user-menu">
+    <button id="user-menu-btn">
+        👤 <span id="username-display"></span> ▼
+    </button>
+
+    <div id="user-dropdown" class="hidden">
+        <div class="user-header">
+            👤 <span id="username-display-dropdown"></span>
+        </div>
+
+        <div class="user-stat">
+            ⭐ Score : <span id="user-score">0</span>
+        </div>
+
+        <div class="user-stat">
+            📚 Quiz : <span id="user-quizzes">0</span>
+        </div>
+
+        <button id="logout-btn">
+            🚪 Déconnexion
+        </button>
+    </div>
+</div>
+
 <!-- Écran de lancement -->
 <div id="splash-screen" class="hidden">
     <h1>MinuteKult 🌍</h1>

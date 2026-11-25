@@ -339,3 +339,105 @@ body.dark-mode #home-btn:hover {
         min-height: 300px;
     }
 }
+
+/* ---------------------------- */
+/* MENU UTILISATEUR             */
+/* ---------------------------- */
+
+#user-menu {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 9999;
+}
+
+#user-menu-btn {
+    border: none;
+    border-radius: 12px;
+    padding: 10px 15px;
+
+    background: white;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,.12);
+
+    transition: .2s;
+}
+
+#user-menu-btn:hover {
+    transform: translateY(-2px);
+}
+
+#user-dropdown {
+    position: absolute;
+    top: 55px;
+    right: 0;
+
+    width: 240px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    box-shadow: 0 6px 20px rgba(0,0,0,.15);
+
+    overflow: hidden;
+}
+
+.user-header {
+    padding: 15px;
+
+    font-weight: bold;
+
+    background: #f5f5f5;
+}
+
+.user-stat {
+    padding: 12px 15px;
+}
+
+#logout-btn {
+    width: 100%;
+
+    border: none;
+
+    padding: 14px;
+
+    cursor: pointer;
+
+    background: #ffe9e9;
+
+    color: #c93131;
+
+    font-weight: 600;
+
+    transition: .2s;
+}
+
+#logout-btn:hover {
+    background: #ffd7d7;
+}
+
+/* Mode sombre */
+
+body.dark-mode #user-menu-btn,
+body.dark-mode #user-dropdown {
+    background: #1e1e1e;
+    color: #e6e6e6;
+}
+
+body.dark-mode .user-header {
+    background: #2a2a2a;
+}
+
+body.dark-mode #logout-btn {
+    background: #3a2020;
+    color: #ff8f8f;
+}
+
+body.dark-mode #logout-btn:hover {
+    background: #4a2a2a;
+}
