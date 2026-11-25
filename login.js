@@ -54,7 +54,7 @@ await addDoc(collection(db, "users"), {
     quizzesCompleted: 0,
     bestScore: 0
 });
-
+    localStorage.removeItem("guest");
     message.textContent = "Compte créé avec succès ✅";
 };
 
@@ -80,6 +80,9 @@ const userDoc = result.docs[0];
 
 localStorage.setItem("pseudo", pseudo);
 localStorage.setItem("userId", userDoc.id);
+
+// Désactive le mode invité
+localStorage.removeItem("guest");
 
 message.textContent = "Connexion réussie ✅";
 
