@@ -16,24 +16,51 @@
     </button>
 
     <div id="user-dropdown" class="hidden">
+
         <div class="user-header">
             👤 <span id="username-display-dropdown"></span>
         </div>
 
-        <div class="user-stat">
-            ⭐ Score : <span id="user-score">0</span>
+        <!-- Version compte -->
+        <div id="logged-user-content">
+
+            <div class="user-stat">
+                ⭐ Score : <span id="user-score">0</span>
+            </div>
+
+            <div class="user-stat">
+                📚 Quiz : <span id="user-quizzes">0</span>
+            </div>
+
+            <button id="logout-btn">
+                🚪 Déconnexion
+            </button>
+
         </div>
 
-        <div class="user-stat">
-            📚 Quiz : <span id="user-quizzes">0</span>
+        <!-- Version invité -->
+        <div id="guest-content" class="hidden">
+
+            <div class="user-stat warning">
+                ⚠️ Vos scores ne sont pas sauvegardés.
+            </div>
+
+            <button id="guest-login-btn">
+                🔑 Connexion
+            </button>
+
+            <button id="guest-register-btn">
+                📝 Créer un compte
+            </button>
+
+            <button id="guest-exit-btn">
+                🚪 Quitter le mode invité
+            </button>
+
         </div>
 
-        <button id="logout-btn">
-            🚪 Déconnexion
-        </button>
     </div>
 </div>
-
 <!-- Écran de lancement -->
 <div id="splash-screen" class="hidden">
     <h1>MinuteKult 🌍</h1>

@@ -87,3 +87,11 @@ message.textContent = "Connexion réussie ✅";
         window.location.href = "index.html";
     }, 1000);
 };
+
+document.getElementById("guest-btn").onclick = () => {
+
+    localStorage.setItem("pseudo", "Invité");
+    localStorage.setItem("guest", "true");
+
+    window.location.href = "index.html";
+};

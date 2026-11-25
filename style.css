@@ -441,3 +441,29 @@ body.dark-mode #logout-btn {
 body.dark-mode #logout-btn:hover {
     background: #4a2a2a;
 }
+
+.warning {
+    color: #d67d00;
+    font-weight: 600;
+}
+
+#guest-login-btn,
+#guest-register-btn,
+#guest-exit-btn {
+    width: 100%;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+}
+
+#guest-login-btn {
+    background: #eef4ff;
+}
+
+#guest-register-btn {
+    background: #eefbe8;
+}
+
+#guest-exit-btn {
+    background: #ffe9e9;
+}

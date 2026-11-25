@@ -14,15 +14,27 @@ const card = document.getElementById("card");
 // -----------------------------
 
 const pseudo = localStorage.getItem("pseudo");
+const guest = localStorage.getItem("guest");
 
-// Empêche l'accès si non connecté
-if (!pseudo) {
+// Empêche l'accès si personne n'est connecté
+if (!pseudo && guest !== "true") {
     window.location.href = "login.html";
 }
 
-// Affiche le pseudo
-document.getElementById("username-display").textContent = pseudo;
-document.getElementById("username-display-dropdown").textContent = pseudo;
+if (guest === "true") {
+
+    document.getElementById("username-display").textContent = "Invité";
+    document.getElementById("username-display-dropdown").textContent = "Invité";
+
+    document.getElementById("logged-user-content").classList.add("hidden");
+    document.getElementById("guest-content").classList.remove("hidden");
+
+} else {
+
+    document.getElementById("username-display").textContent = pseudo;
+    document.getElementById("username-display-dropdown").textContent = pseudo;
+
+}
 
 // Ouvrir / fermer le menu utilisateur
 document.getElementById("user-menu-btn").onclick = (e) => {
@@ -40,9 +52,28 @@ document.addEventListener("click", () => {
         .classList.add("hidden");
 });
 
-// Déconnexion
+// Déconnexion utilisateur classique
 document.getElementById("logout-btn").onclick = () => {
 
+localStorage.removeItem("pseudo");
+localStorage.removeItem("userId");
+localStorage.removeItem("guest");
+
+    window.location.href = "login.html";
+};
+
+// Boutons du mode invité
+document.getElementById("guest-login-btn").onclick = () => {
+    window.location.href = "login.html";
+};
+
+document.getElementById("guest-register-btn").onclick = () => {
+    window.location.href = "login.html";
+};
+
+document.getElementById("guest-exit-btn").onclick = () => {
+
+    localStorage.removeItem("guest");
     localStorage.removeItem("pseudo");
 
     window.location.href = "login.html";
