@@ -3,6 +3,7 @@ let questions = [];
 let questionIndex = 0;
 let score = 0;
 let selectedDifficulty = null;
+let nextQuestionTimeout = null;
 
 // Écrans
 const splash = document.getElementById("splash-screen");
@@ -55,9 +56,9 @@ document.addEventListener("click", () => {
 // Déconnexion utilisateur classique
 document.getElementById("logout-btn").onclick = () => {
 
-localStorage.removeItem("pseudo");
-localStorage.removeItem("userId");
-localStorage.removeItem("guest");
+    localStorage.removeItem("pseudo");
+    localStorage.removeItem("userId");
+    localStorage.removeItem("guest");
 
     window.location.href = "login.html";
 };
@@ -205,6 +206,13 @@ document.querySelectorAll(".theme-btn").forEach(btn => {
 // -----------------------------
 function resetToHome() {
 
+    // Annule le passage automatique à la question suivante
+    clearTimeout(nextQuestionTimeout);
+
+    // Remet la carte à l'endroit
+    card.classList.remove("flip");
+    document.querySelector(".back").classList.remove("correct", "wrong");
+
     const dark = document.body.classList.contains("dark-mode");
 
     document.body.className = "";
@@ -267,7 +275,7 @@ function afficherQuestion(index) {
 
             card.classList.add("flip");
 
-            setTimeout(() => {
+            nextQuestionTimeout = setTimeout(() => {
                 card.classList.remove("flip");
                 document.querySelector(".back").classList.remove("correct", "wrong");
 
@@ -330,3 +338,13 @@ function afficherFin() {
     };
 }
 
+
+// -----------------------------
+// BOUTON ACCUEIL PENDANT LE QUIZ
+// -----------------------------
+document.getElementById("quiz-home-btn").onclick = () => {
+    const confirmer = confirm("Quitter le quiz ? Ta progression sera perdue.");
+    if (confirmer) {
+        resetToHome();
+    }
+};
