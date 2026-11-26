@@ -128,6 +128,10 @@ document.getElementById("guest-exit-btn").onclick = () => {
     window.location.href = "login.html";
 };
 
+document.getElementById("ranking-floating-btn").onclick = () => {
+    window.location.href = "classement.html";
+};
+
 // Splash → Home
 setTimeout(() => {
     splash.classList.add("hidden");
