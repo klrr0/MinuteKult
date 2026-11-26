@@ -50,9 +50,31 @@ document.getElementById("register-btn").onclick = async () => {
 await addDoc(collection(db, "users"), {
     pseudo,
     password,
+
     score: 0,
     quizzesCompleted: 0,
-    bestScore: 0
+    bestScore: 0,
+
+    themeScores: {
+        arts: 0,
+        cinema: 0,
+        culture: 0,
+        droit: 0,
+        gastronomie: 0,
+        geographie: 0,
+        histoire: 0,
+        jeuxvideos: 0,
+        langues: 0,
+        litterature: 0,
+        mangas: 0,
+        musique: 0,
+        mythologie: 0,
+        philosophie: 0,
+        psychologie: 0,
+        religions: 0,
+        sciences: 0,
+        sport: 0
+    }
 });
     localStorage.removeItem("guest");
     message.textContent = "Compte créé avec succès ✅";

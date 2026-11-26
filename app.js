@@ -1,3 +1,4 @@
+let currentTheme = null;
 import { app } from "./firebase.js";
 
 import {
@@ -173,6 +174,7 @@ document.querySelectorAll(".theme-btn").forEach(btn => {
         }
 
         let theme = btn.dataset.theme.trim().toLowerCase().replace(/\s+/g, "");
+        currentTheme = theme;
 
         console.log("Thème sélectionné :", theme);
 
@@ -362,6 +364,26 @@ async function sauvegarderScore() {
         if (!snapshot.exists()) return;
 
         const user = snapshot.data();
+        const themeScores = user.themeScores || {
+    arts: 0,
+    cinema: 0,
+    culture: 0,
+    droit: 0,
+    gastronomie: 0,
+    geographie: 0,
+    histoire: 0,
+    jeuxvideos: 0,
+    langues: 0,
+    litterature: 0,
+    mangas: 0,
+    musique: 0,
+    mythologie: 0,
+    philosophie: 0,
+    psychologie: 0,
+    religions: 0,
+    sciences: 0,
+    sport: 0
+};
 
         const nouveauScore =
             (user.score || 0) + score;
@@ -371,12 +393,15 @@ async function sauvegarderScore() {
 
         const meilleurScore =
             Math.max(user.bestScore || 0, score);
+        themeScores[currentTheme] =
+    (themeScores[currentTheme] || 0) + score;
 
-        await updateDoc(userRef, {
-            score: nouveauScore,
-            quizzesCompleted: nouveauxQuiz,
-            bestScore: meilleurScore
-        });
+      await updateDoc(userRef, {
+    score: nouveauScore,
+    quizzesCompleted: nouveauxQuiz,
+    bestScore: meilleurScore,
+    themeScores: themeScores
+});
 
         console.log("Score sauvegardé ✅");
 
