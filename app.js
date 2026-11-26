@@ -8,6 +8,41 @@ import {
 } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-firestore.js";
 
 const db = getFirestore(app);
+async function chargerProfil() {
+
+    const guest = localStorage.getItem("guest");
+
+    if (guest === "true") return;
+
+    const userId = localStorage.getItem("userId");
+
+    if (!userId) return;
+
+    try {
+
+        const userRef = doc(db, "users", userId);
+
+        const snapshot = await getDoc(userRef);
+
+        if (!snapshot.exists()) return;
+
+        const user = snapshot.data();
+
+        document.getElementById("user-score").textContent =
+            user.score || 0;
+
+        document.getElementById("user-quizzes").textContent =
+            user.quizzesCompleted || 0;
+
+    } catch (err) {
+
+        console.error(
+            "Erreur chargement profil :",
+            err
+        );
+
+    }
+}
 
 // Variables globales
 let questions = [];
@@ -47,6 +82,7 @@ if (guest === "true") {
     document.getElementById("username-display-dropdown").textContent = pseudo;
 
 }
+chargerProfil();
 
 // Ouvrir / fermer le menu utilisateur
 document.getElementById("user-menu-btn").onclick = (e) => {
