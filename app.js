@@ -1,3 +1,14 @@
+import { app } from "./firebase.js";
+
+import {
+    getFirestore,
+    doc,
+    getDoc,
+    updateDoc
+} from "https://www.gstatic.com/firebasejs/13.4.0/firebase-firestore.js";
+
+const db = getFirestore(app);
+
 // Variables globales
 let questions = [];
 let questionIndex = 0;
@@ -295,6 +306,53 @@ function afficherQuestion(index) {
     });
 }
 
+async function sauvegarderScore() {
+
+    const guest = localStorage.getItem("guest");
+
+    // Les invités ne sont jamais sauvegardés
+    if (guest === "true") return;
+
+    const userId = localStorage.getItem("userId");
+
+    if (!userId) return;
+
+    try {
+
+        const userRef = doc(db, "users", userId);
+
+        const snapshot = await getDoc(userRef);
+
+        if (!snapshot.exists()) return;
+
+        const user = snapshot.data();
+
+        const nouveauScore =
+            (user.score || 0) + score;
+
+        const nouveauxQuiz =
+            (user.quizzesCompleted || 0) + 1;
+
+        const meilleurScore =
+            Math.max(user.bestScore || 0, score);
+
+        await updateDoc(userRef, {
+            score: nouveauScore,
+            quizzesCompleted: nouveauxQuiz,
+            bestScore: meilleurScore
+        });
+
+        console.log("Score sauvegardé ✅");
+
+    } catch (err) {
+
+        console.error(
+            "Erreur sauvegarde score :",
+            err
+        );
+
+    }
+}
 
 // -----------------------------
 // FIN DU QUIZ
@@ -302,6 +360,7 @@ function afficherQuestion(index) {
 function afficherFin() {
     const total = questions.length;
     const percent = Math.round((score / total) * 100);
+    sauvegarderScore();
 
     let emoji;
     if (percent >= 80) emoji = "🎉";
