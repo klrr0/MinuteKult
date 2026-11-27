@@ -147,3 +147,51 @@ body.dark-mode .tab-btn.active {
 body.dark-mode .back-btn {
     background: #2b2b2b;
 }
+
+#home-btn-floating {
+    position: fixed;
+    top: 15px;
+    left: 165px;
+
+    padding: 10px 18px;
+
+    border-radius: 8px;
+
+    background: #e0e0e0;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-size: .95rem;
+
+    z-index: 9999;
+
+    transition: .2s;
+}
+
+#home-btn-floating:hover {
+    background: #cfcfcf;
+}
+
+body.dark-mode #home-btn-floating {
+    background: #2a2a2a;
+    color: #e6e6e6;
+}
+
+body.dark-mode #home-btn-floating:hover {
+    background: #3a3a3a;
+}
+
+body.dark-mode #dark-toggle,
+body.dark-mode #ranking-floating-btn,
+body.dark-mode #home-btn-floating {
+    background: #2a2a2a;
+    color: #e6e6e6;
+}
+
+body.dark-mode #dark-toggle:hover,
+body.dark-mode #ranking-floating-btn:hover,
+body.dark-mode #home-btn-floating:hover {
+    background: #3a3a3a;
+}

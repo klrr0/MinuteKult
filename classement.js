@@ -116,3 +116,7 @@ darkToggle.onclick = () => {
         document.body.classList.contains("dark-mode")
     );
 };
+
+document.getElementById("home-btn-floating").onclick = () => {
+    window.location.href = "index.html";
+};
