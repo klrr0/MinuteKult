@@ -99,3 +99,20 @@ document
 });
 
 chargerClassement("global");
+
+const darkToggle =
+    document.getElementById("dark-toggle");
+
+if (localStorage.getItem("darkMode") === "true") {
+    document.body.classList.add("dark-mode");
+}
+
+darkToggle.onclick = () => {
+
+    document.body.classList.toggle("dark-mode");
+
+    localStorage.setItem(
+        "darkMode",
+        document.body.classList.contains("dark-mode")
+    );
+};

@@ -91,3 +91,59 @@ h1 {
 
     border-radius: 10px;
 }
+
+/* -------------------------- */
+/* MODE SOMBRE                */
+/* -------------------------- */
+
+#dark-toggle {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+
+    padding: 10px 18px;
+
+    border-radius: 8px;
+
+    background: #e0e0e0;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-size: .95rem;
+
+    z-index: 9999;
+
+    transition: .2s;
+}
+
+#dark-toggle:hover {
+    background: #cfcfcf;
+}
+
+body.dark-mode {
+    background: #121212;
+    color: #e6e6e6;
+}
+
+body.dark-mode #ranking-container {
+    background: #1e1e1e;
+}
+
+body.dark-mode .rank-row {
+    border-bottom: 1px solid #333;
+}
+
+body.dark-mode .tab-btn {
+    background: #1e1e1e;
+    color: #e6e6e6;
+}
+
+body.dark-mode .tab-btn.active {
+    background: #3a3a3a;
+}
+
+body.dark-mode .back-btn {
+    background: #2b2b2b;
+}
