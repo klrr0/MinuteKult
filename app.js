@@ -209,6 +209,9 @@ document.querySelectorAll(".theme-btn").forEach(btn => {
         // Affiche la carte
         document.querySelector(".flashcard-container").style.display = "flex";
 
+        document.getElementById("ranking-floating-btn").classList.add("hidden");
+        document.getElementById("quiz-home-btn").classList.remove("hidden");
+        
         // Charge le JSON du thème
         fetch(`./data/${theme}.json`)
             .then(res => {
@@ -286,6 +289,9 @@ function resetToHome() {
 
     document.querySelector(".flashcard-container").style.display = "none";
     home.classList.remove("hidden");
+
+    document.getElementById("ranking-floating-btn").classList.remove("hidden");
+    document.getElementById("quiz-home-btn").classList.add("hidden");
 
     questions = [];
     questionIndex = 0;
